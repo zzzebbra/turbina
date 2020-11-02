@@ -1,7 +1,9 @@
 .app {
-  width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
   height: 40vh;
-  background-color: rgb(67, 101, 186);
+  background-color:#59636C;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
