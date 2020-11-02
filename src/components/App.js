@@ -1,11 +1,12 @@
 import React from 'react';
+import Player from './Player/Player';
 import './app.css';
 
 function App() {
   return (
-    <div className="App">
-      Turbina
-    </div>
+    <main className="app">
+      <Player />
+    </main>
   );
 }
 
