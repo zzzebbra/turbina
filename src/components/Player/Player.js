@@ -7,10 +7,9 @@ const Player = () => {
   return (
     <section className="player">
       <div className="player__wrapper">
-        <button className="player__play-button" />
+        <button className="player__play-button player__play-button_pause" />
         <PlayerWindow />
-        <button className="player__info-switcher">Релизы</button>
-        <button className="player__hide-switcher" />
+        <button className="player__hide-switcher player__hide-switcher_close" />
         <PlayerInfo />
       </div>  
     </section>
