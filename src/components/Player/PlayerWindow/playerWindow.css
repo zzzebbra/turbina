@@ -10,10 +10,19 @@
 
 .player__track-name {
   margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .player__track-duration {
   margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: right;
 }
 
 .player__scroll {
