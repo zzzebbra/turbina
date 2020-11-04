@@ -1,16 +1,17 @@
-.main{
+.main {
   max-width: 1260px;
   background-color: #fff;
   color: #000000;
   padding: 110px 50px;
+  box-sizing: border-box;
 }
 
-.container{
+.container {
   margin: 0 0 90px;
   max-width: 760px;
 }
 
-.containerTitle{
+.containerTitle {
   margin: 0 0 40px;
   font-family: Inter;
   font-style: italic;
@@ -19,11 +20,10 @@
   line-height: 61px;
 }
 
-.conatainerContent{
-
+.conatainerContent {
 }
 
-.containerText{
+.containerText {
   margin: 0 0 24px;
   font-family: Inter;
   font-style: normal;
@@ -33,17 +33,16 @@
   color: #000000;
 }
 
-.containerText:last-of-type{
+.containerText:last-of-type {
   margin: 0;
 }
 
-
-.theses{
+.theses {
   margin: 0;
   padding: 0 0 0 20px;
 }
 
-.thesesItem{
+.thesesItem {
   margin: 0 0 14px;
   font-family: Inter;
   font-style: normal;

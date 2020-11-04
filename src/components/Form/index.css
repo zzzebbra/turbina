@@ -1,4 +1,4 @@
-.contactUsCapture{
+.contactUsCapture {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
@@ -10,22 +10,48 @@
   margin: 0 0 60px;
 }
 
-.form
-
-.formInput{
-  background: transparent;
-  padding: 20px 0;
-  min-width: 600px;
-  border: none;
-  border-bottom: 2px solid #000;
+.inputWrapper {
   margin: 0 0 10px;
 }
 
-.formInput:last-of-type{
+.inputWrapper:last-of-type {
   margin: 0;
 }
 
-.formInput::placeholder{
+.inputError {
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000a2;
+}
+
+.inputErrorTrue {
+  font-size: 16px;
+  line-height: 20px;
+  color: #ff0000;
+}
+
+.formInput {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  background: transparent;
+  padding: 20px 2px;
+  min-width: 600px;
+  border: none;
+  border-bottom: 2px solid #000;
+  margin: 0 0 20px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  resize: none;
+}
+
+.formInputActive {
+  margin: 0;
+}
+
+.formInput::placeholder {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
@@ -35,20 +61,55 @@
   color: rgba(0, 0, 0, 0.4);
 }
 
-.checkbox{
+.checkbox {
   padding: 40px 0;
+  display: flex;
+  align-items: center;
 }
 
-.checkboxInput{
-  border-radius: 50%;
+.checkboxInputWrapper {
+  display: inline-block;
   margin: 0 20px 0 0;
+  position: relative;
+  width: 28px;
+  height: 28px;
 }
 
-.checkboxLink{
+.checkboxInput {
+  opacity: 0;
+  margin: 0;
+  z-index: 2;
+}
+.checkboxLabel {
+  cursor: pointer;
+}
+
+.checkboxInputFake {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.checkboxInput:checked + .checkboxInputFake {
+  background-color: black;
+}
+
+.checkboxLabelText {
+  display: inline-block;
+  margin: 0 6px 0 0;
+}
+
+.checkboxLink {
   color: inherit;
 }
 
-.formButton{
+.formButton {
   cursor: pointer;
   background-color: transparent;
   padding: 25px 20px;
@@ -63,4 +124,9 @@
   /* identical to box height, or 125% */
   text-align: center;
   color: #000000;
+  transition: all 0.6s ease-in-out;
+}
+
+.formButton:hover {
+  font-style: italic;
 }
