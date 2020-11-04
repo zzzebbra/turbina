@@ -68,6 +68,10 @@
   line-height: 19px;
 }
 
+.player__info-switcher_hidden {
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
   .player__track-name {
     font-size: 18px;

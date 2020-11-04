@@ -1,7 +1,7 @@
 import React from 'react';
 import './playerWindow.css';
 
-const PlayerWindow = () => {
+const PlayerWindow = props => {
 
   return (
     <div className="player__play-window">
@@ -12,7 +12,9 @@ const PlayerWindow = () => {
           <div className="player__scroll-duration"></div>
         </div>
       </div>
-      <button className="player__info-switcher">Релизы</button>
+      <button className={!props.visibility ? 
+      'player__info-switcher player__info-switcher_hidden' : 
+      'player__info-switcher'}>Релизы</button>
     </div>
   )
 }
