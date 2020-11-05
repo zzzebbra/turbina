@@ -9,6 +9,7 @@ const Player = () => {
   const [play, setPlay] = React.useState(false);
   const [tracks, setTracks] = React.useState([]);
   const [currentTrack, setCurrentTrack] = React.useState([]);
+  const [media, setMedia] = React.useState(undefined);
 
   React.useEffect(() => {
     setTracks(audioData.map((i) => ({
@@ -23,8 +24,6 @@ const Player = () => {
   }
 
   const playToggler = () => {
-    const media = document.getElementById(currentTrack.id).querySelector('audio');
-    console.log(media);
     if (!play) {
       setPlay(true);
       media.play();
@@ -35,11 +34,18 @@ const Player = () => {
   }
 
   const trackSelector = (e) => {
-    setCurrentTrack([]);
-    setCurrentTrack(tracks.find((i) => {
+    if (media !== undefined) { 
+      media.pause();
+      media.currentTime = 0;
+      setPlay(false); 
+    };
+    const selectedTrack = tracks.find((i) => {
       return (i.id === e.target.id);
-    }));
+    });
+    setCurrentTrack(selectedTrack);
+    setMedia(document.getElementById(selectedTrack.id).querySelector('audio'))
   }
+
 
   return (
     <section className="player">
