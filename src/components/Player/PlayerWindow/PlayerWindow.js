@@ -3,6 +3,7 @@ import './playerWindow.css';
 
 const PlayerWindow = props => {
   const media = props.currentMedia;
+  let playStatus = props.playStatus;
   let timer = document.querySelector('.player__track-duration');
   let scroll = document.querySelector('.player__scroll-duration');
   let scrollBar = document.querySelector('.player__scroll');
@@ -20,6 +21,16 @@ const PlayerWindow = props => {
     let scrollLength = scrollBar.clientWidth * (media.currentTime/media.duration);
     scroll.style.width = scrollLength + 'px';
   }
+
+  const trackTimeChange = (e) => {
+    let scrollWidth = (e.offsetX === undefined ? e.layerX : e.offsetX);;
+    media.currentTime = (media.duration * scrollWidth) / scrollBar.clientWidth;
+    scroll.style.width = scrollWidth + 'px';
+  }
+
+  if (!!playStatus) {
+    scrollBar.addEventListener('click', trackTimeChange);
+  };
   
   if (media !== undefined) {
     media.addEventListener('timeupdate', setTime);
