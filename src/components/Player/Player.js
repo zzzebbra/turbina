@@ -43,22 +43,17 @@ const Player = () => {
       return (i.id === e.target.id);
     });
     setCurrentTrack(selectedTrack);
-    setMedia(document.getElementById(selectedTrack.id).querySelector('audio'))
+    setMedia(document.getElementById(selectedTrack.id).querySelector('audio'));
   }
 
 
   return (
     <section className="player">
-      {currentTrack.length !== 0 && 
-        <audio>
-          <source src={currentTrack.src} type="audio/mp3" />
-        </audio>
-      }
       <div className={!visibility ? 'player__wrapper player__wrapper_hidden' : 'player__wrapper player__wrapper_visible'}>
         <button className={!play ? 
           'player__play-button player__play-button_play' : 
           'player__play-button player__play-button_pause'} onClick={currentTrack.length !== 0 ? playToggler : undefined} />
-        <PlayerWindow visibility={visibility} data={currentTrack} playStatus={play} />
+        <PlayerWindow visibility={visibility} data={currentTrack} playStatus={play} currentMedia={media}/>
         <button className={!visibility ? 
           'player__hide-switcher player__hide-switcher_open' : 
           'player__hide-switcher player__hide-switcher_close' }
