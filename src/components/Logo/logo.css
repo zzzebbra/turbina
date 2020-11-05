@@ -1,0 +1,51 @@
+.mainLogo {
+  margin: 0 auto;
+  max-width: 720px;
+  height: 40vh;
+  position: relative;
+}
+
+.mainLogoImage {
+  max-width: 720px;
+  max-height: 226px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@media screen and (max-width: 1024px) {
+  .mainLogo {
+    max-width: 600px;
+  }
+
+  .mainLogoImage {
+    max-width: 600px;
+    max-height: 185px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mainLogo {
+    max-width: 620px;
+  }
+}
+
+@media screen and (max-width: 645px) {
+  .mainLogoImage {
+    max-width: 550px;
+    max-height: 100px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .mainLogo {
+    max-width: 270px;
+    min-height: 80px;
+  }
+
+  .mainLogoImage {
+    max-width: 270px;
+    max-height: 82px;
+  }
+}
