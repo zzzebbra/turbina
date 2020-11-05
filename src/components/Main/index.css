@@ -1,14 +1,63 @@
+.wrapper {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .main {
+  width: 100%;
   max-width: 1260px;
+  min-width: 300px;
   background-color: #fff;
   color: #000000;
   padding: 110px 50px;
   box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1025px) {
+  .main {
+    padding: 100px 50px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .main {
+    padding: 80px 20px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .container {
   margin: 0 0 90px;
   max-width: 760px;
+}
+
+@media screen and (max-width: 1025px) {
+  .container {
+    margin: 0 0 80px;
+    max-width: 680px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .container {
+    max-width: 648px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .container {
+    max-width: 270px;
+    margin-bottom: 60px;
+  }
 }
 
 .containerTitle {
@@ -18,6 +67,28 @@
   font-weight: 400;
   font-size: 50px;
   line-height: 61px;
+}
+
+@media screen and (max-width: 1025px) {
+  .containerTitle {
+    font-size: 46px;
+    line-height: 56px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .containerTitle {
+    font-size: 42px;
+    line-height: 51px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .containerTitle {
+    font-size: 32px;
+    line-height: 39px;
+    margin: 0 0 30px;
+  }
 }
 
 .conatainerContent {
@@ -33,6 +104,20 @@
   color: #000000;
 }
 
+@media screen and (max-width: 1025px) {
+  .containerText {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .containerText {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
 .containerText:last-of-type {
   margin: 0;
 }
@@ -40,6 +125,18 @@
 .theses {
   margin: 0;
   padding: 0 0 0 20px;
+}
+
+@media screen and (max-width: 1025px) {
+  .theses {
+    padding: 0 0 0 16px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .theses {
+    padding: 0 0 0 10px;
+  }
 }
 
 .thesesItem {
@@ -50,4 +147,22 @@
   font-size: 16px;
   line-height: 22px;
   color: #000000;
+}
+
+@media screen and (max-width: 1025px) {
+  .thesesItem {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .thesesItem {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.thesesItem:last-of-type {
+  margin: 0;
 }

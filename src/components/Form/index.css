@@ -4,14 +4,36 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-  /* identical to box height, or 137% */
   color: #000000;
   display: inline-block;
   margin: 0 0 60px;
 }
 
+@media screen and (max-width: 1025px) {
+  .contactUsCapture {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .contactUsCapture {
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0 0 40px;
+  }
+}
+
 .inputWrapper {
+  box-sizing: border-box;
   margin: 0 0 10px;
+  max-width: max-content;
+}
+
+@media screen and (max-width: 650px) {
+  .inputWrapper {
+    min-width: 100%;
+  }
 }
 
 .inputWrapper:last-of-type {
@@ -19,6 +41,7 @@
 }
 
 .inputError {
+  padding: 4px 0 0;
   display: block;
   font-size: 16px;
   line-height: 20px;
@@ -40,15 +63,31 @@
   min-width: 600px;
   border: none;
   border-bottom: 2px solid #000;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
   font-size: 16px;
   line-height: 20px;
   color: #000000;
   resize: none;
 }
 
-.formInputActive {
-  margin: 0;
+@media screen and (max-width: 769px) {
+  .formInput {
+    width: 648px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .formInput {
+    width: 0;
+    max-width: 648px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .formInput {
+    min-width: 100%;
+  }
 }
 
 .formInput::placeholder {
@@ -57,8 +96,17 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
-  /* identical to box height, or 125% */
   color: rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (max-width: 430px) {
+  .formInput {
+    font-size: 14px;
+  }
+}
+
+.formInputActive {
+  margin: 0;
 }
 
 .checkbox {
@@ -100,16 +148,65 @@
   background-color: black;
 }
 
+.checkboxInput:focus + .checkboxInputFake {
+  outline: 5px auto #1362e1;
+}
+
 .checkboxLabelText {
   display: inline-block;
   margin: 0 6px 0 0;
 }
 
 .checkboxLink {
+  position: relative;
   color: inherit;
 }
 
+.checkboxLink::after {
+  cursor: default;
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  content: "Пользовательское соглашение";
+  width: 260px;
+  padding: 10px;
+  text-align: center;
+  max-height: 30px;
+  letter-spacing: 0.75px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ccc;
+  transition: all 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 430px) {
+  .checkboxLink::after {
+    position: absolute;
+    top: 0;
+    left: -10000000%;
+    width: 1px;
+    height: 1px;
+  }
+}
+
+.checkboxLink:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 430px) {
+  .checkboxLink:hover::after {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .formButton {
+  box-sizing: border-box;
   cursor: pointer;
   background-color: transparent;
   padding: 25px 20px;
@@ -121,12 +218,90 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
-  /* identical to box height, or 125% */
   text-align: center;
   color: #000000;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+@media screen and (max-width: 769px) {
+  .formButton {
+    box-sizing: border-box;
+    width: 648px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .formButton {
+    width: 0;
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .formButton {
+    width: 0;
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .formButton {
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .formButton {
+    padding: 10px 20px;
+  }
 }
 
 .formButton:hover {
   font-style: italic;
+}
+
+.formButtonDisabled {
+  position: relative;
+}
+
+.formButtonDisabled:hover {
+  font-style: normal;
+}
+
+.formButtonDisabled::after {
+  cursor: default;
+  position: absolute;
+  bottom: -68px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  content: "Еще нельзя. Все поля, должны быть заполнены корректыми данными";
+  width: 300px;
+  padding: 10px;
+  min-height: 30px;
+  letter-spacing: 0.75px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ccc;
+  transition: all 0.6s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 430px) {
+  .formButtonDisabled::after {
+    position: absolute;
+    top: 0;
+    left: -10000000%;
+    width: 1px;
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .formButtonDisabled:hover::after {
+    opacity: 0;
+    visibility: hidden;
+  }
 }

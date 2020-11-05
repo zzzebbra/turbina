@@ -1,30 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import cx from "classnames";
 import "./index.css";
 
 function Form() {
-  const inputNameRexExp = /^[а-яА-ЯёЁ\s]+$/;
+  // input Name
+  const inputNameRegex = /^[а-яА-ЯёЁ\s]+$/;
   const [inputName, setInputName] = React.useState("");
   const [isInputNameValid, setIsInputNameValid] = React.useState(true);
   const [inputNameError, setinputNameError] = React.useState(
     "введите имя и фамилию автора"
   );
   const inpuNametValidation = () => {
-    setIsInputNameValid(inputNameRexExp.test(inputName));
+    setIsInputNameValid(inputNameRegex.test(inputName));
     isInputNameValid
       ? setinputNameError("введите имя и фамилию автора")
-      : setinputNameError("ошибка, имя введено не верно");
+      : setinputNameError(
+          "ошибка, имя введено не верно. Используйте только Кириллицу"
+        );
   };
 
-  // const inputTelRexExpFinal = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/g;
-  const inputTelRexExp = /^\+?[0-9\s]*$/;
+  // input Telephone
+  // const inputTelRegexFinal = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/g;
+  const inputTelRegex = /^\+?[0-9\s]*$/;
   const [inputTel, setInputTel] = React.useState("");
   const [isInputTelValid, setIsInputTelValid] = React.useState(true);
   const [inputTelError, setinputTelError] = React.useState(
     "введите номер в формате: +7 909 967 38 82"
   );
   const inpuTeltValidation = () => {
-    setIsInputTelValid(inputTelRexExp.test(inputTel));
+    setIsInputTelValid(inputTelRegex.test(inputTel));
     isInputTelValid
       ? setinputTelError("введите номер в формате: +7 909 967 38 82")
       : setinputTelError(
@@ -32,21 +37,57 @@ function Form() {
         );
   };
 
-  const inputEmailRexExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  // input Email
+  const inputEmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const [inputEmail, setInputEmail] = React.useState("");
   const [isInputEmailValid, setIsInputEmailValid] = React.useState(true);
   const [inputEmailError, setinputEmailError] = React.useState("введите email");
   const inpuEmailtValidation = () => {
-    setIsInputEmailValid(inputEmailRexExp.test(inputEmail));
+    setIsInputEmailValid(inputEmailRegex.test(inputEmail));
     isInputEmailValid
       ? setinputEmailError("введите email")
       : setinputEmailError("ошибка, email введен не верно");
+  };
+
+  // input Text
+  const [inputText, setInputText] = React.useState("");
+  const [inputTextStart, setInputTextStart] = React.useState(false);
+  const [isInputTextValid, setIsInputTextValid] = React.useState(true);
+  const [inputTextError, setinputTextError] = React.useState("введите стихи");
+  const inpuTexttValidation = () => {
+    if (inputText) setInputTextStart(true);
+    inputTextStart && !inputText
+      ? setinputTextError("ошибка, поле не должно быть пустым. Введите стихи")
+      : setinputTextError("введите стихи");
+  };
+
+  //input checkbox policy
+  const [inputCheckbox, setInputCheckbox] = React.useState(false);
+
+  // state of button submit form
+  const [isButtonActive, setIsButtonActive] = React.useState(false);
+
+  // button Submit active
+  const isFormFilled = () => {
+    const isFormValid = [
+      inputName,
+      isInputNameValid,
+      inputTel,
+      isInputTelValid,
+      inputEmail,
+      isInputEmailValid,
+      inputText,
+      inputCheckbox,
+    ].every((elem) => elem !== false);
+    setIsButtonActive(isFormValid);
   };
 
   React.useEffect(() => {
     inpuNametValidation();
     inpuTeltValidation();
     inpuEmailtValidation();
+    inpuTexttValidation();
+    isFormFilled();
   }, [
     inputTel,
     isInputTelValid,
@@ -54,6 +95,9 @@ function Form() {
     isInputEmailValid,
     inputName,
     isInputNameValid,
+    inputText,
+    isInputTextValid,
+    inputCheckbox,
   ]);
 
   return (
@@ -118,16 +162,27 @@ function Form() {
             </span>
           )}
         </div>
-        <textarea
-          required
-          rows="1"
-          className="formInput"
-          type="text"
-          placeholder="Стихи"
-        />
+        <div className="inputWrapper">
+          <textarea
+            val={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+            required
+            rows="1"
+            className={cx("formInput", inputTextStart && "formInputActive")}
+            type="text"
+            placeholder="Стихи"
+          />
+          {inputTextStart && (
+            <span className={cx("inputError", !inputText && "inputErrorTrue")}>
+              {inputTextError}
+            </span>
+          )}
+        </div>
         <div className="checkbox">
           <div htmlFor="checkbox" className="checkboxInputWrapper">
             <input
+              val={inputCheckbox}
+              onChange={(e) => setInputCheckbox(e.target.checked)}
               required
               id="checkbox"
               className="checkboxInput"
@@ -137,14 +192,24 @@ function Form() {
           </div>
           <label className="checkboxLabel" htmlFor="checkbox">
             <span className="checkboxLabelText">Согласен с</span>
-            <a href="#" className="checkboxLink">
+            <Link to="#" className="checkboxLink">
               офертой
-            </a>
+            </Link>
           </label>
         </div>
-        <button type="submit" className="formButton">
-          Отправить форму
-        </button>
+        {isButtonActive ? (
+          <button type="submit" className="formButton">
+            Отправить форму
+          </button>
+        ) : (
+          <button
+            disabled
+            type="submit"
+            className="formButton formButtonDisabled"
+          >
+            Отправить форму
+          </button>
+        )}
       </form>
     </div>
   );
