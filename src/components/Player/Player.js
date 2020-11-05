@@ -9,7 +9,6 @@ const Player = () => {
   const [play, setPlay] = React.useState(false);
   const [tracks, setTracks] = React.useState([]);
   const [currentTrack, setCurrentTrack] = React.useState([]);
-  console.log(currentTrack);
 
   React.useEffect(() => {
     setTracks(audioData.map((i) => ({
@@ -24,31 +23,36 @@ const Player = () => {
   }
 
   const playToggler = () => {
-    setPlay(!play);
+    const media = document.getElementById(currentTrack.id).querySelector('audio');
+    console.log(media);
+    if (!play) {
+      setPlay(true);
+      media.play();
+    } else {
+      setPlay(false);
+      media.pause();
+    }
   }
 
   const trackSelector = (e) => {
+    setCurrentTrack([]);
     setCurrentTrack(tracks.find((i) => {
-      console.log('ID-' + i.id);
-      return (i.id === e.target.id.toNumber);
+      return (i.id === e.target.id);
     }));
-    console.log(tracks);
-    console.log(e.target.id);
-    console.log(e.target);
   }
 
   return (
     <section className="player">
-      {currentTrack !== undefined && 
+      {currentTrack.length !== 0 && 
         <audio>
-          <source src={currentTrack.src} type="audio/mp3"/> 
+          <source src={currentTrack.src} type="audio/mp3" />
         </audio>
       }
       <div className={!visibility ? 'player__wrapper player__wrapper_hidden' : 'player__wrapper player__wrapper_visible'}>
         <button className={!play ? 
           'player__play-button player__play-button_play' : 
-          'player__play-button player__play-button_pause'} onClick={playToggler} />
-        <PlayerWindow visibility={visibility} data={currentTrack} />
+          'player__play-button player__play-button_pause'} onClick={currentTrack.length !== 0 ? playToggler : undefined} />
+        <PlayerWindow visibility={visibility} data={currentTrack} playStatus={play} />
         <button className={!visibility ? 
           'player__hide-switcher player__hide-switcher_open' : 
           'player__hide-switcher player__hide-switcher_close' }

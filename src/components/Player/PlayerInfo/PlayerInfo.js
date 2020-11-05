@@ -8,13 +8,18 @@ const PlayerInfo = props => {
       <ul className="player__list">
         <p className="player__list-title">Релизы</p>
         {props.data.map((item) => (
-          <li key={item.id} id={item.id} src={item.src} className="player__list-item" onClick={props.selector}>{item.name}</li>
+          <li key={item.id} id={item.id} src={item.src} className="player__list-item" onClick={props.selector}>
+          {item.name}
+          <audio>
+            <source src={item.src} type="audio/mp3" />
+          </audio>
+          </li>
         ))}
       </ul>
       <div className="player__list-scroll">
         <div className="player__list-slider" />
       </div>
-    </article>
+    </article>  
   )
 }
 

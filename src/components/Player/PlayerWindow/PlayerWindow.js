@@ -3,7 +3,7 @@ import './playerWindow.css';
 
 const PlayerWindow = props => {
   let media = document.querySelector('audio');
-  let mediaTime = '00:00';
+  let mediaTime = '';
   const setTime = () => {
     if (!media) return;
     let minutes = Math.floor((media.duration - media.currentTime) / 60);
@@ -13,6 +13,11 @@ const PlayerWindow = props => {
     mediaTime = minutesValue + ':' + secondsValue;
   }
   media !== null && media.addEventListener('timeUpdate', setTime);
+
+  // const playToggler = () => {
+  //   !props.playStatus ? media.pause : media.play;
+  // }
+
 
   return (
     <div className="player__play-window">
