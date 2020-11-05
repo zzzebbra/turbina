@@ -16,6 +16,7 @@
   box-sizing: border-box;
   border-radius: 30px;
   padding: 8px;
+  transition: .5s;
 }
 
 .headerLinksListItem {
@@ -26,6 +27,7 @@
 .headerLink:hover {
   cursor: pointer;
   opacity: 0.6;
+  transition: .5s;
 }
 
 @media screen and (max-width: 1024px) {
