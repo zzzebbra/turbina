@@ -13,7 +13,6 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-
 .player__info-wrapper {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -64,6 +63,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: none;
+}
+
+.player__list-item:hover {
+  font-style: italic;
 }
 
 .player__list-text {
@@ -155,5 +158,5 @@
     grid-row-start: 3;
     grid-row-end: 4;
   }
-  
+
 }

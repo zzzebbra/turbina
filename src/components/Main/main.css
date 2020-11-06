@@ -1,6 +1,7 @@
 .main {
   min-height: 100vh;
   width: 100%;
+  /* Закомментированные стили ниже сделаны на основе фона из макета при помощи сайта https://cssgradient.io/. Есть идея на его основе сделать живой фон (но пока не продумано) */
   /* background: rgb(212,159,177);
   background: -moz-linear-gradient(180deg, rgba(212,159,177,1) 0%, rgba(45,61,129,1) 98%, rgba(44,93,122,1) 100%);
   background: -webkit-linear-gradient(180deg, rgba(212,159,177,1) 0%, rgba(45,61,129,1) 98%, rgba(44,93,122,1) 100%);
