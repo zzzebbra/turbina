@@ -1,4 +1,5 @@
 import React from 'react';
+import defaultTexts from '../../../data/defaultTexts';
 import './playerWindow.css';
 
 const PlayerWindow = props => {
@@ -40,7 +41,7 @@ const PlayerWindow = props => {
   return (
     <div className="player__play-window">
       <div className="player__trackbar">
-        <p className="player__track-name">{props.data !== undefined ? props.data.name : ''}</p>
+        <p className="player__track-name">{props.data.length !== 0 ? props.data.name : 'Выберите релиз'}</p>
         <p className="player__track-duration"></p>
         <div className="player__scroll">
           <div className="player__scroll-duration"></div>
@@ -48,7 +49,9 @@ const PlayerWindow = props => {
       </div>
       <button className={!props.visibility ? 
       'player__info-switcher player__info-switcher_hidden' : 
-      'player__info-switcher'}>Релизы</button>
+      'player__info-switcher'} onClick={props.setTitle} >{props.titleMode == 'releases' ? 
+      defaultTexts.playerInfoButton.releaseMode : 
+      defaultTexts.playerInfoButton.textMode}</button>
     </div>
   )
 }
