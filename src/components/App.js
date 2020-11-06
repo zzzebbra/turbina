@@ -1,12 +1,8 @@
-import React from 'react';
-import './app.css';
+import React from "react";
+import Main from "./Main/Main";
 
 function App() {
-  return (
-    <div className="App">
-      Turbina
-    </div>
-  );
+  return <Main />;
 }
 
 export default App;
