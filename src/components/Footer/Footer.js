@@ -4,11 +4,15 @@ import "./style.css";
 function Footer() {
   return (
     <footer className="footer">
-      <a className="footerLink" href="https://marshakbooks.ru/" target="blanc">
+      <a
+        className="footerLink footerLinkMarshak"
+        href="https://marshakbooks.ru/"
+        target="blanc"
+      >
         &#169; Маршак, 2020.
       </a>
-      <spna className="footerCopyright">
-        Сделано студентами{" "}
+      <span className="footerCopyright">
+        Сделано студентами
         <a
           target="blanc"
           href="https://praktikum.yandex.ru"
@@ -16,7 +20,7 @@ function Footer() {
         >
           Яндекс.Практикум
         </a>
-      </spna>
+      </span>
     </footer>
   );
 }

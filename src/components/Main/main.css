@@ -6,15 +6,20 @@
   background: -webkit-linear-gradient(180deg, rgba(212,159,177,1) 0%, rgba(45,61,129,1) 98%, rgba(44,93,122,1) 100%);
   background: linear-gradient(180deg, rgba(212,159,177,1) 0%, rgba(45,61,129,1) 98%, rgba(44,93,122,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d49fb1",endColorstr="#2c5d7a",GradientType=1); */
-  background: url(../../images/background.svg);
+  background: url(../../images/testBackground.svg);
   /* background: rgb(212, 159, 177); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
