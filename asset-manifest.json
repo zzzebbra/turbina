@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/turbina/static/css/main.fc19f0bb.chunk.css",
-    "main.js": "/turbina/static/js/main.50410dfe.chunk.js",
-    "main.js.map": "/turbina/static/js/main.50410dfe.chunk.js.map",
-    "runtime-main.js": "/turbina/static/js/runtime-main.6d15d634.js",
-    "runtime-main.js.map": "/turbina/static/js/runtime-main.6d15d634.js.map",
-    "static/js/2.314bfcc0.chunk.js": "/turbina/static/js/2.314bfcc0.chunk.js",
-    "static/js/2.314bfcc0.chunk.js.map": "/turbina/static/js/2.314bfcc0.chunk.js.map",
-    "static/js/3.1b88a6bc.chunk.js": "/turbina/static/js/3.1b88a6bc.chunk.js",
-    "static/js/3.1b88a6bc.chunk.js.map": "/turbina/static/js/3.1b88a6bc.chunk.js.map",
-    "index.html": "/turbina/index.html",
-    "static/css/main.fc19f0bb.chunk.css.map": "/turbina/static/css/main.fc19f0bb.chunk.css.map",
-    "static/js/2.314bfcc0.chunk.js.LICENSE.txt": "/turbina/static/js/2.314bfcc0.chunk.js.LICENSE.txt",
-    "static/media/Bob Marley - I shot the sheriff.293f72d9.mp3": "/turbina/static/media/Bob Marley - I shot the sheriff.293f72d9.mp3",
-    "static/media/Bop - Fragile Moments.d1a10b6e.mp3": "/turbina/static/media/Bop - Fragile Moments.d1a10b6e.mp3",
-    "static/media/index.css": "/turbina/static/media/Inter.var.a738a131.woff2",
-    "static/media/player.css": "/turbina/static/media/play-button.8a504c35.svg",
-    "static/media/logo-marshak.2155b0aa.svg": "/turbina/static/media/logo-marshak.2155b0aa.svg",
-    "static/media/logo-turbina.10fd6bb4.svg": "/turbina/static/media/logo-turbina.10fd6bb4.svg",
-    "static/media/main.css": "/turbina/static/media/testBackground.47b4c727.svg",
-    "static/media/Вопли Видоплясова - Солнечные Дни.dd41470e.mp3": "/turbina/static/media/Вопли Видоплясова - Солнечные Дни.dd41470e.mp3"
+    "main.css": "/bybogdan.github.io/turbina/static/css/main.fb4d4fbf.chunk.css",
+    "main.js": "/bybogdan.github.io/turbina/static/js/main.6ed2d28b.chunk.js",
+    "main.js.map": "/bybogdan.github.io/turbina/static/js/main.6ed2d28b.chunk.js.map",
+    "runtime-main.js": "/bybogdan.github.io/turbina/static/js/runtime-main.5e0229c1.js",
+    "runtime-main.js.map": "/bybogdan.github.io/turbina/static/js/runtime-main.5e0229c1.js.map",
+    "static/js/2.314bfcc0.chunk.js": "/bybogdan.github.io/turbina/static/js/2.314bfcc0.chunk.js",
+    "static/js/2.314bfcc0.chunk.js.map": "/bybogdan.github.io/turbina/static/js/2.314bfcc0.chunk.js.map",
+    "static/js/3.1b88a6bc.chunk.js": "/bybogdan.github.io/turbina/static/js/3.1b88a6bc.chunk.js",
+    "static/js/3.1b88a6bc.chunk.js.map": "/bybogdan.github.io/turbina/static/js/3.1b88a6bc.chunk.js.map",
+    "index.html": "/bybogdan.github.io/turbina/index.html",
+    "static/css/main.fb4d4fbf.chunk.css.map": "/bybogdan.github.io/turbina/static/css/main.fb4d4fbf.chunk.css.map",
+    "static/js/2.314bfcc0.chunk.js.LICENSE.txt": "/bybogdan.github.io/turbina/static/js/2.314bfcc0.chunk.js.LICENSE.txt",
+    "static/media/Bob Marley - I shot the sheriff.293f72d9.mp3": "/bybogdan.github.io/turbina/static/media/Bob Marley - I shot the sheriff.293f72d9.mp3",
+    "static/media/Bop - Fragile Moments.d1a10b6e.mp3": "/bybogdan.github.io/turbina/static/media/Bop - Fragile Moments.d1a10b6e.mp3",
+    "static/media/index.css": "/bybogdan.github.io/turbina/static/media/Inter.var.a738a131.woff2",
+    "static/media/player.css": "/bybogdan.github.io/turbina/static/media/play-button.8a504c35.svg",
+    "static/media/logo-marshak.2155b0aa.svg": "/bybogdan.github.io/turbina/static/media/logo-marshak.2155b0aa.svg",
+    "static/media/logo-turbina.10fd6bb4.svg": "/bybogdan.github.io/turbina/static/media/logo-turbina.10fd6bb4.svg",
+    "static/media/main.css": "/bybogdan.github.io/turbina/static/media/testBackground.47b4c727.svg",
+    "static/media/Вопли Видоплясова - Солнечные Дни.dd41470e.mp3": "/bybogdan.github.io/turbina/static/media/Вопли Видоплясова - Солнечные Дни.dd41470e.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.6d15d634.js",
+    "static/js/runtime-main.5e0229c1.js",
     "static/js/2.314bfcc0.chunk.js",
-    "static/css/main.fc19f0bb.chunk.css",
-    "static/js/main.50410dfe.chunk.js"
+    "static/css/main.fb4d4fbf.chunk.css",
+    "static/js/main.6ed2d28b.chunk.js"
   ]
 }
