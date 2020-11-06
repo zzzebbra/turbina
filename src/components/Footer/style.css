@@ -3,6 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 15px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 600px) {
@@ -13,7 +15,7 @@
 }
 
 .footerLink {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -22,6 +24,12 @@
   color: #ffffff;
   text-decoration: none;
   cursor: pointer;
+}
+
+.footerLink:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: .5s;
 }
 
 @media screen and (max-width: 600px) {
