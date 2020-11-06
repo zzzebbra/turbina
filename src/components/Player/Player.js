@@ -2,6 +2,7 @@ import React from 'react';
 import PlayerWindow from './PlayerWindow/PlayerWindow';
 import PlayerInfo from './PlayerInfo/PlayerInfo';
 import audioData from '../../data/audioData';
+import singleData from '../../data/singleData';
 import './player.css';
 
 const Player = () => {
@@ -10,13 +11,20 @@ const Player = () => {
   const [tracks, setTracks] = React.useState([]);
   const [currentTrack, setCurrentTrack] = React.useState([]);
   const [media, setMedia] = React.useState(undefined);
+  const [titleMode, setTitleMode] = React.useState('releases');
 
   React.useEffect(() => {
-    setTracks(audioData.map((i) => ({
+    const trackList = audioData.map((i) => ({
       id: i.id,
       name: i.name,
       src: i.src,
-    })))
+      text: `${i.text}`,
+    }))
+    setTracks(trackList);
+    // Доделать фичу плеера с начальной вставкой трека при загрузке,
+    // if (trackList.length !== 0) {
+    //   setCurrentTrack(trackList[0]);
+    // }
   }, [])
 
   const showToggler = () => {
@@ -46,6 +54,10 @@ const Player = () => {
     setMedia(document.getElementById(selectedTrack.id).querySelector('audio'));
   }
 
+  const switchMode = () => {
+    setTitleMode(titleMode == 'releases' ? 'texts' : 'releases')
+  }
+
 
   return (
     <section className="player">
@@ -53,12 +65,12 @@ const Player = () => {
         <button className={!play ? 
           'player__play-button player__play-button_play' : 
           'player__play-button player__play-button_pause'} onClick={currentTrack.length !== 0 ? playToggler : undefined} />
-        <PlayerWindow visibility={visibility} data={currentTrack} playStatus={play} currentMedia={media}/>
+        <PlayerWindow visibility={visibility} data={currentTrack} playStatus={play} currentMedia={media} titleMode={titleMode} setTitle={switchMode} />
         <button className={!visibility ? 
           'player__hide-switcher player__hide-switcher_open' : 
           'player__hide-switcher player__hide-switcher_close' }
           onClick={showToggler} />
-        <PlayerInfo data={tracks} selector={trackSelector} />
+        <PlayerInfo data={tracks} selector={trackSelector} titleMode={titleMode} track={currentTrack} />
       </div>  
     </section>
   )
