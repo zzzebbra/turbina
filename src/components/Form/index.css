@@ -165,14 +165,14 @@
 .checkboxLink::after {
   cursor: default;
   position: absolute;
-  top: -46px;
+  top: -60px;
   left: 50%;
   transform: translate(-50%, 0);
   content: "Пользовательское соглашение";
   width: 260px;
   padding: 10px;
   text-align: center;
-  max-height: 30px;
+  max-height: 40px;
   letter-spacing: 0.75px;
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -297,6 +297,11 @@
     width: 1px;
     height: 1px;
   }
+}
+
+.formButtonDisabled:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media screen and (max-width: 430px) {
