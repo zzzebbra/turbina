@@ -24,7 +24,8 @@ const PlayerInfo = props => {
                 "player__list-item player__list-item_active" : 
                 "player__list-item"
                 } onClick={props.selector}>
-              {/* {trackListLength === 1 ? '' : item.name} */}
+{/* Доделать фичу в плеере с начальной вставкой трека при загрузке */}
+{/* {trackListLength === 1 ? '' : item.name} */}
               {item.name}
               <audio>
                 <source src={item.src} type="audio/mp3" />

@@ -14,13 +14,14 @@ const Player = () => {
   const [titleMode, setTitleMode] = React.useState('releases');
 
   React.useEffect(() => {
-    const trackList = singleData.map((i) => ({
+    const trackList = audioData.map((i) => ({
       id: i.id,
       name: i.name,
       src: i.src,
       text: `${i.text}`,
     }))
     setTracks(trackList);
+    // Доделать фичу плеера с начальной вставкой трека при загрузке,
     // if (trackList.length !== 0) {
     //   setCurrentTrack(trackList[0]);
     // }
