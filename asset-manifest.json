@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/bybogdan.github.io/turbina/static/css/main.84cabf17.chunk.css",
+    "main.js": "/bybogdan.github.io/turbina/static/js/main.50410dfe.chunk.js",
+    "main.js.map": "/bybogdan.github.io/turbina/static/js/main.50410dfe.chunk.js.map",
+    "runtime-main.js": "/bybogdan.github.io/turbina/static/js/runtime-main.5e0229c1.js",
+    "runtime-main.js.map": "/bybogdan.github.io/turbina/static/js/runtime-main.5e0229c1.js.map",
+    "static/js/2.314bfcc0.chunk.js": "/bybogdan.github.io/turbina/static/js/2.314bfcc0.chunk.js",
+    "static/js/2.314bfcc0.chunk.js.map": "/bybogdan.github.io/turbina/static/js/2.314bfcc0.chunk.js.map",
+    "static/js/3.1b88a6bc.chunk.js": "/bybogdan.github.io/turbina/static/js/3.1b88a6bc.chunk.js",
+    "static/js/3.1b88a6bc.chunk.js.map": "/bybogdan.github.io/turbina/static/js/3.1b88a6bc.chunk.js.map",
+    "index.html": "/bybogdan.github.io/turbina/index.html",
+    "static/css/main.84cabf17.chunk.css.map": "/bybogdan.github.io/turbina/static/css/main.84cabf17.chunk.css.map",
+    "static/js/2.314bfcc0.chunk.js.LICENSE.txt": "/bybogdan.github.io/turbina/static/js/2.314bfcc0.chunk.js.LICENSE.txt",
+    "static/media/Bob Marley - I shot the sheriff.293f72d9.mp3": "/bybogdan.github.io/turbina/static/media/Bob Marley - I shot the sheriff.293f72d9.mp3",
+    "static/media/Bop - Fragile Moments.d1a10b6e.mp3": "/bybogdan.github.io/turbina/static/media/Bop - Fragile Moments.d1a10b6e.mp3",
+    "static/media/index.css": "/bybogdan.github.io/turbina/static/media/Inter.var.a738a131.woff2",
+    "static/media/player.css": "/bybogdan.github.io/turbina/static/media/play-button.8a504c35.svg",
+    "static/media/logo-marshak.2155b0aa.svg": "/bybogdan.github.io/turbina/static/media/logo-marshak.2155b0aa.svg",
+    "static/media/logo-turbina.10fd6bb4.svg": "/bybogdan.github.io/turbina/static/media/logo-turbina.10fd6bb4.svg",
+    "static/media/main.css": "/bybogdan.github.io/turbina/static/media/testBackground.47b4c727.svg",
+    "static/media/Вопли Видоплясова - Солнечные Дни.dd41470e.mp3": "/bybogdan.github.io/turbina/static/media/Вопли Видоплясова - Солнечные Дни.dd41470e.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5e0229c1.js",
+    "static/js/2.314bfcc0.chunk.js",
+    "static/css/main.84cabf17.chunk.css",
+    "static/js/main.50410dfe.chunk.js"
+  ]
+}
