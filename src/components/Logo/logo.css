@@ -1,17 +1,21 @@
 .mainLogo {
   margin: 0 auto;
   max-width: 720px;
-  height: 40vh;
-  position: relative;
+  /* height: 40vh; */
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mainLogoImage {
   max-width: 720px;
   max-height: 226px;
-  position: absolute;
+
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, 0); */
 }
 
 @media screen and (max-width: 1024px) {
