@@ -1,0 +1,109 @@
+.player {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+}
+
+.player__wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 61px auto 69px;
+  grid-template-rows: 42px auto;
+  justify-items: center;
+  align-items: center;
+}
+
+.player__wrapper_visible {
+  transform: translateY(0);
+  transition: transform 1s ease;
+}
+
+.player__wrapper_hidden {
+  transform: translateY(144px);
+  transition: transform 1s ease;
+}
+
+.player__play-button {
+  border: 0;
+  outline: 0;
+  width: 18px;
+  height: 15px;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.player__play-button_pause {
+  background-image: url('../../images/player/pause-button.svg');
+}
+
+.player__play-button_play {
+  background-image: url('../../images/player/play-button.svg');
+}
+
+.player__hide-switcher {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.player__hide-switcher_open {
+  background-image: url('../../images/player/open-button.svg');
+}
+
+.player__hide-switcher_close {
+  background-image: url('../../images/player/close-button.svg');
+}
+
+@media screen and (max-width: 1024px) {
+  .player__wrapper_hidden {
+    transform: translateY(134px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .player__wrapper {
+    grid-template-rows: 32px auto;
+  }
+
+  .player__wrapper_hidden {
+    transform: translateY(114px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .player__play-button {
+    width: 16px;
+    height: 13px;
+  }
+
+  .player__hide-switcher {
+    width: 16px;
+    height: 16px;
+  }
+
+  .player__wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40px auto 40px;
+    grid-template-rows: 32px 51px auto;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .player__wrapper_hidden {
+    transform: translateY(165px);
+  }
+}
