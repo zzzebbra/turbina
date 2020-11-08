@@ -2,7 +2,7 @@ import React from 'react';
 import PlayerWindow from './PlayerWindow/PlayerWindow';
 import PlayerInfo from './PlayerInfo/PlayerInfo';
 import audioData from '../../data/audioData';
-import singleData from '../../data/singleData';
+// import singleData from '../../data/singleData';
 import './player.css';
 
 const Player = () => {
@@ -42,10 +42,10 @@ const Player = () => {
   }
 
   const trackSelector = (e) => {
-    if (media !== undefined) { 
+    if (media !== undefined) {
       media.pause();
       media.currentTime = 0;
-      setPlay(false); 
+      setPlay(false);
     };
     const selectedTrack = tracks.find((i) => {
       return (i.id === e.target.id);
@@ -55,23 +55,23 @@ const Player = () => {
   }
 
   const switchMode = () => {
-    setTitleMode(titleMode == 'releases' ? 'texts' : 'releases')
+    setTitleMode(titleMode === 'releases' ? 'texts' : 'releases')
   }
 
 
   return (
     <section className="player">
       <div className={!visibility ? 'player__wrapper player__wrapper_hidden' : 'player__wrapper player__wrapper_visible'}>
-        <button className={!play ? 
-          'player__play-button player__play-button_play' : 
+        <button className={!play ?
+          'player__play-button player__play-button_play' :
           'player__play-button player__play-button_pause'} onClick={currentTrack.length !== 0 ? playToggler : undefined} />
         <PlayerWindow visibility={visibility} data={currentTrack} playStatus={play} currentMedia={media} titleMode={titleMode} setTitle={switchMode} />
-        <button className={!visibility ? 
-          'player__hide-switcher player__hide-switcher_open' : 
+        <button className={!visibility ?
+          'player__hide-switcher player__hide-switcher_open' :
           'player__hide-switcher player__hide-switcher_close' }
           onClick={showToggler} />
         <PlayerInfo data={tracks} selector={trackSelector} titleMode={titleMode} track={currentTrack} />
-      </div>  
+      </div>
     </section>
   )
 }

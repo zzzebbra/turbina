@@ -18,7 +18,7 @@ const PlayerWindow = props => {
     (seconds < 10) ? (secondValue = '0' + seconds) : (secondValue = seconds);
     let mediaTime = minuteValue + ':' + secondValue;
     timer.textContent = mediaTime;
-  
+
     let scrollLength = scrollBar.clientWidth * (media.currentTime/media.duration);
     scroll.style.width = scrollLength + 'px';
   }
@@ -32,7 +32,7 @@ const PlayerWindow = props => {
   if (!!playStatus) {
     scrollBar.addEventListener('click', trackTimeChange);
   };
-  
+
   if (media !== undefined) {
     media.addEventListener('timeupdate', setTime);
   };
@@ -47,10 +47,10 @@ const PlayerWindow = props => {
           <div className="player__scroll-duration"></div>
         </div>
       </div>
-      <button className={!props.visibility ? 
-      'player__info-switcher player__info-switcher_hidden' : 
-      'player__info-switcher'} onClick={props.setTitle} >{props.titleMode == 'releases' ? 
-      defaultTexts.playerInfoButton.releaseMode : 
+      <button className={!props.visibility ?
+      'player__info-switcher player__info-switcher_hidden' :
+      'player__info-switcher'} onClick={props.setTitle} >{props.titleMode === 'releases' ?
+      defaultTexts.playerInfoButton.releaseMode :
       defaultTexts.playerInfoButton.textMode}</button>
     </div>
   )
