@@ -1,13 +1,9 @@
-import React from 'react';
-import Player from './Player/Player';
-import './app.css';
+import React from "react";
+import Main from "./Main/Main";
+
 
 function App() {
-  return (
-    <main className="app">
-      <Player />
-    </main>
-  );
+  return <Main />;
 }
 
 export default App;

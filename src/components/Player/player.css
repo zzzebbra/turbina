@@ -1,3 +1,11 @@
+li {
+  cursor: pointer;
+
+}
+button {
+  cursor: pointer;
+}
+
 .player {
   margin: 0;
   padding: 0;
@@ -8,6 +16,8 @@
   justify-content: flex-end;
   align-items: center;
   overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .player__wrapper {
