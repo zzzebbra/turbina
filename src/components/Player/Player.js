@@ -21,10 +21,7 @@ const Player = () => {
       text: `${i.text}`,
     }))
     setTracks(trackList);
-    // Доделать фичу плеера с начальной вставкой трека при загрузке,
-    // if (trackList.length !== 0) {
-    //   setCurrentTrack(trackList[0]);
-    // }
+    setCurrentTrack(trackList[0]);
   }, [])
 
   const showToggler = () => {
