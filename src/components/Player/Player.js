@@ -10,7 +10,6 @@ const Player = () => {
   const [play, setPlay] = React.useState(false);
   const [tracks, setTracks] = React.useState([]);
   const [currentTrack, setCurrentTrack] = React.useState([]);
-  const [media, setMedia] = React.useState(undefined);
   const [titleMode, setTitleMode] = React.useState('releases');
 
   React.useEffect(() => {
@@ -21,10 +20,7 @@ const Player = () => {
       text: `${i.text}`,
     }))
     setTracks(trackList);
-    // Доделать фичу плеера с начальной вставкой трека при загрузке,
-    // if (trackList.length !== 0) {
-    //   setCurrentTrack(trackList[0]);
-    // }
+    setCurrentTrack(trackList[0]);
   }, [])
 
   const showToggler = () => {
@@ -34,24 +30,17 @@ const Player = () => {
   const playToggler = () => {
     if (!play) {
       setPlay(true);
-      media.play();
     } else {
       setPlay(false);
-      media.pause();
     }
   }
 
   const trackSelector = (e) => {
-    if (media !== undefined) {
-      media.pause();
-      media.currentTime = 0;
-      setPlay(false);
-    };
+    playToggler();
     const selectedTrack = tracks.find((i) => {
       return (i.id === e.target.id);
     });
     setCurrentTrack(selectedTrack);
-    setMedia(document.getElementById(selectedTrack.id).querySelector('audio'));
   }
 
   const switchMode = () => {
@@ -65,7 +54,7 @@ const Player = () => {
         <button className={!play ?
           'player__play-button player__play-button_play' :
           'player__play-button player__play-button_pause'} onClick={currentTrack.length !== 0 ? playToggler : undefined} />
-        <PlayerWindow visibility={visibility} data={currentTrack} playStatus={play} currentMedia={media} titleMode={titleMode} setTitle={switchMode} />
+        <PlayerWindow visibility={visibility} currentTrack={currentTrack} playStatus={play} titleMode={titleMode} setTitle={switchMode} />
         <button className={!visibility ?
           'player__hide-switcher player__hide-switcher_open' :
           'player__hide-switcher player__hide-switcher_close' }

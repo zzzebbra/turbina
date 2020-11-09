@@ -5,9 +5,17 @@ import './playerWindow.css';
 const PlayerWindow = props => {
   const media = props.currentMedia;
   let playStatus = props.playStatus;
+  let currentTrack = props.currentTrack;
   let timer = document.querySelector('.player__track-duration');
   let scroll = document.querySelector('.player__scroll-duration');
   let scrollBar = document.querySelector('.player__scroll');
+  const playerRef = React.useRef();
+
+  React.useEffect(() => {
+    console.log(playerRef);
+    !!playStatus ? playerRef.current.play() : playerRef.current.pause();
+  }, [playStatus])
+
 
   const setTime = () => {
     let minutes = Math.floor((media.duration - media.currentTime) / 60);
@@ -41,12 +49,13 @@ const PlayerWindow = props => {
   return (
     <div className="player__play-window">
       <div className="player__trackbar">
-        <p className="player__track-name">{props.data.length !== 0 ? props.data.name : 'Выберите релиз'}</p>
+        <p className="player__track-name">{currentTrack.length !== 0 ? currentTrack.name : ''}</p>
         <p className="player__track-duration"></p>
         <div className="player__scroll">
           <div className="player__scroll-duration"></div>
         </div>
       </div>
+      <audio ref={playerRef} src={currentTrack.src} type="audio/mp3" />
       <button className={!props.visibility ?
       'player__info-switcher player__info-switcher_hidden' :
       'player__info-switcher'} onClick={props.setTitle} >{props.titleMode === 'releases' ?

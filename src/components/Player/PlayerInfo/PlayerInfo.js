@@ -30,9 +30,6 @@ const PlayerInfo = props => {
 {/* Доделать фичу в плеере с начальной вставкой трека при загрузке */}
 {/* {trackListLength === 1 ? '' : item.name} */}
               {item.name}
-              <audio>
-                <source src={item.src} type="audio/mp3" />
-              </audio>
               </li>
             ))}
             {
