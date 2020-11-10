@@ -19,6 +19,7 @@ const Player = () => {
       name: i.name,
       src: i.src,
       text: `${i.text}`,
+      videoLink: i.link,
     }))
     setTracks(trackList);
     setCurrentTrack(trackList[0]);
@@ -55,6 +56,8 @@ const Player = () => {
         'player__wrapper_hidden' : !visibility,
         'player__wrapper_visible' : visibility,
       })}>
+        <a className={classNames ('player__video-link', {'player__video-link_visible' : !!currentTrack.videoLink})}
+        href={currentTrack.videoLink} target='_blank' />
         <button className={classNames ('player__play-button', {
           'player__play-button_play' : !play,
           'player__play-button_pause': play,
