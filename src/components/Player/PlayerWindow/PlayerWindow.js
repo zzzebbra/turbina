@@ -17,6 +17,12 @@ const PlayerWindow = props => {
 
 
   const setTime = () => {
+
+    console.log('div.offsetLeft - ' + scrollBar.current.offsetLeft);
+    console.log('div.offsetX - ' + scrollBar.current.offsetX);
+    console.log('div.clientX - ' + scrollBar.current.clientX);
+    console.log('div.getBoundingClientRect().left - ' + scrollBar.current.getBoundingClientRect().left);
+
     let minutes = Math.floor((player.current.duration - player.current.currentTime) / 60);
     let seconds = Math.floor((player.current.duration - player.current.currentTime) - minutes * 60);
     let minuteValue;
