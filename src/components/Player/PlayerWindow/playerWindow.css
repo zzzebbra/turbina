@@ -20,6 +20,8 @@
 
 .player__track-name {
   margin: 0;
+  color: #FFFFFF;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -32,6 +34,8 @@
 
 .player__track-duration {
   margin: 0 0 0 10px;
+  color: #FFFFFF;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -68,6 +72,7 @@
   border-radius: 17px;
   outline: 0;
   color: #FFFFFF;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: italic;
   font-weight: normal;
   font-size: 16px;

@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import PlayerWindow from './PlayerWindow/PlayerWindow';
 import PlayerInfo from './PlayerInfo/PlayerInfo';
 import audioData from '../../data/audioData';
@@ -50,14 +51,20 @@ const Player = () => {
 
   return (
     <section className="player">
-      <div className={!visibility ? 'player__wrapper player__wrapper_hidden' : 'player__wrapper player__wrapper_visible'}>
-        <button className={!play ?
-          'player__play-button player__play-button_play' :
-          'player__play-button player__play-button_pause'} onClick={currentTrack.length !== 0 ? playToggler : undefined} />
+      <div className={classNames ('player__wrapper', {
+        'player__wrapper_hidden' : !visibility,
+        'player__wrapper_visible' : visibility,
+      })}>
+        <button className={classNames ('player__play-button', {
+          'player__play-button_play' : !play,
+          'player__play-button_pause': play,
+        })}
+          onClick={currentTrack.length !== 0 ? playToggler : undefined} />
         <PlayerWindow visibility={visibility} currentTrack={currentTrack} playStatus={play} titleMode={titleMode} setTitle={switchMode} />
-        <button className={!visibility ?
-          'player__hide-switcher player__hide-switcher_open' :
-          'player__hide-switcher player__hide-switcher_close' }
+        <button className= {classNames ('player__hide-switcher', {
+          'player__hide-switcher_open' : !visibility,
+          'player__hide-switcher_close' : visibility,
+        })}
           onClick={showToggler} />
         <PlayerInfo data={tracks} selector={trackSelector} titleMode={titleMode} track={currentTrack} />
       </div>
