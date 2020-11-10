@@ -17,12 +17,6 @@ const PlayerWindow = props => {
 
 
   const setTime = () => {
-
-    console.log('div.offsetLeft - ' + scrollBar.current.offsetLeft);
-    console.log('div.offsetX - ' + scrollBar.current.offsetX);
-    console.log('div.clientX - ' + scrollBar.current.clientX);
-    console.log('div.getBoundingClientRect().left - ' + scrollBar.current.getBoundingClientRect().left);
-
     let minutes = Math.floor((player.current.duration - player.current.currentTime) / 60);
     let seconds = Math.floor((player.current.duration - player.current.currentTime) - minutes * 60);
     let minuteValue;
@@ -37,10 +31,26 @@ const PlayerWindow = props => {
   }
 
   const trackTimeChange = (e) => {
+    console.log('div.offsetLeft - ' + scrollBar.current.offsetLeft);
+    console.log('div.offsetX - ' + scrollBar.current.offsetX);
+    console.log('div.clientX - ' + scrollBar.current.clientX);
+    console.log('event.clientX - ' + e.clientX);
+    console.log('event.offsetX - ' + e.offsetX);
+    console.log('div.getBoundingClientRect().left - ' + scrollBar.current.getBoundingClientRect().left);
+
     let scrollWidth = e.clientX - scrollBar.current.getBoundingClientRect().left;
     player.current.currentTime = (player.current.duration * scrollWidth) / scrollBar.current.clientWidth;
     scroll.current.style.width = scrollWidth + 'px';
   }
+
+  const scrollBarElement = document.querySelector('.player__scroll');
+  if (scrollBarElement !== null) {
+    scrollBarElement.addEventListener('click', ((event) => {
+      console.log('test event offsetX - ' + event.offsetX);
+      console.log('test event clientX - ' + event.clientX);
+    }))
+  }
+
 
 
   return (
