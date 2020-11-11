@@ -1,6 +1,7 @@
 import React from 'react';
-import classNames from 'classnames';
-import defaultTexts from '../../../data/defaultTexts';
+// import classNames from 'classnames';
+import PlayerInfoSwitcher from '../PlayerInfoSwitcher/PlayerInfoSwitcher';
+// import defaultTexts from '../../../data/defaultTexts';
 import './playerWindow.css';
 
 const PlayerWindow = props => {
@@ -11,11 +12,9 @@ const PlayerWindow = props => {
   const scroll = React.useRef();
   const scrollBar= React.useRef();
 
-
   React.useEffect(() => {
     !!playStatus ? player.current.play() : player.current.pause();
   }, [playStatus])
-
 
   const setTime = () => {
     let minutes = Math.floor((player.current.duration - player.current.currentTime) / 60);
@@ -47,12 +46,16 @@ const PlayerWindow = props => {
         </div>
       </div>
       <audio ref={player} src={currentTrack.src} type="audio/mp3" onTimeUpdate={setTime} onLoadedData={setTime} />
-      <button 
+      {/* <button 
         className= {classNames('player__info-switcher', {'player__info-switcher_hidden' : !props.visibility})} 
         onClick={props.setTitle}> {props.titleMode === 'releases' ?
         defaultTexts.playerInfoButton.releaseMode :
         defaultTexts.playerInfoButton.textMode}
-      </button>
+      </button> */}
+      {/* change visibility appearance */}
+      {document.documentElement.clientWidth > 480 && 
+        <PlayerInfoSwitcher currentTrack={currentTrack} visibility={props.visibility} titleMode={props.titleMode} setTitle={props.setTitle} />
+      }
     </div>
   )
 }

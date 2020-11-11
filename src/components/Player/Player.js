@@ -59,7 +59,7 @@ const Player = () => {
         'player__wrapper_hidden' : !visibility,
         'player__wrapper_visible' : visibility,
       })}>
-        <img  className={classNames ('player__cover', {'player__cover_hidden': !visibility && document.documentElement.clientWidth > 768})}
+        <img  className={classNames ('player__cover', {'player__cover_hidden': !visibility})}
         src={currentTrack.cover} alt='album-cover'/>
         <button className={classNames ('player__play-button', {
           'player__play-button_play' : !play,

@@ -63,27 +63,6 @@
   background-color: #FFFFFF;
 }
 
-.player__info-switcher {
-  justify-self: end;
-  width: 135px;
-  height: 35px;
-  margin-left: 20px;
-  background-color: transparent;
-  border: 2px solid #FFFFFF;
-  border-radius: 17px;
-  outline: 0;
-  color: #FFFFFF;
-  font-family: Inter, Arial, Helvetica, sans-serif;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-}
-
-.player__info-switcher_hidden {
-  display: none;
-}
-
 @media screen and (max-width: 1024px) {
   .player__track-name {
     font-size: 18px;
@@ -94,14 +73,6 @@
     font-size: 18px;
     line-height: 22px;
   }
-
-  .player__info-switcher {
-    width: 125px;
-    height: 34px;
-    border-radius: 16px;
-    font-size: 15px;
-    line-height: 18px;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -109,14 +80,6 @@
 }
 
 @media screen and (max-width: 640px) {
-  .player__info-switcher {
-    width: 122px;
-    height: 31px;
-    border-radius: 15px;
-    font-size: 12px;
-    line-height: 15px;
-  }
-
   .player__track-name {
     font-size: 14px;
     line-height: 19px;
@@ -136,11 +99,5 @@
 
   .player__trackbar {
     height: 32px;
-  }
-
-  .player__info-switcher {
-    width: 100%;
-    max-width: 240px;
-    margin: 0;
   }
 }

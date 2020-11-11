@@ -7,7 +7,10 @@ const defaultTexts = {
     releaseMode: 'Релизы:',
     singleReleaseMode: 'Пока что у нас только 1 релиз.',
     textMode: 'Текст песни:',
-  }
+  },
+  playerVideoButton: {
+    videoMode: 'Клип',
+  },
 }
 
 export default defaultTexts;
