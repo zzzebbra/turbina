@@ -145,6 +145,7 @@ button {
   .player__cover {
     width: 240px;
     height: 240px;
+    justify-self: center;
   }
 
   .player__play-button {
@@ -163,7 +164,7 @@ button {
     grid-template-columns: 40px auto 40px;
     grid-template-rows: 32px 282px 51px auto;
     grid-template-areas: 
-    'playbutton playerwindow playerwindow switcher'
+    'playbutton playerwindow switcher'
     '. albumcover .'
     '. selector .'
     '. list .'

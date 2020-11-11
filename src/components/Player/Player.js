@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PlayerWindow from './PlayerWindow/PlayerWindow';
+import PlayerInfoSwitcher from './PlayerInfoSwitcher/PlayerInfoSwitcher';
 import PlayerInfo from './PlayerInfo/PlayerInfo';
 import audioData from '../../data/audioData';
-// import singleData from '../../data/singleData';
 import './player.css';
 
 const Player = () => {
@@ -15,6 +15,7 @@ const Player = () => {
 
   React.useEffect(() => {
     const trackList = audioData.map((i) => ({
+    // const trackList = audioData.slice(0, 2).map((i) => ({
       id: i.id,
       artist: i.artist,
       secondArtist: i.secondArtist,
@@ -72,6 +73,9 @@ const Player = () => {
           'player__hide-switcher_close' : visibility,
         })}
           onClick={showToggler} />
+        {document.documentElement.clientWidth <= 480 && 
+          <PlayerInfoSwitcher currentTrack={currentTrack} visibility={visibility} titleMode={titleMode} setTitle={switchMode} />
+        }
         <PlayerInfo data={tracks} selector={trackSelector} titleMode={titleMode} track={currentTrack} />
       </div>
     </section>

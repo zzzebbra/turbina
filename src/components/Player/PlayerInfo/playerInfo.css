@@ -71,14 +71,14 @@
 }
 
 /* Custom scrollbars styles */
-.track-horizontal {
+/* .track-horizontal {
   background-color: transparent;
   z-index: -1;
 }
 
 .thumb-horizontal {
   background-color: transparent;
-}
+} */
 
 .track-vertical {
  position: absolute;
@@ -90,14 +90,13 @@
  background-color: rgba(243, 243, 243, 0.1);
 }
 
-.thumb-vertical {
-  border-radius: 1px;
-  background-color: rgba(255, 255, 255, 0.3);
+.track-vertical_hidden {
   display: none;
 }
 
-.thumb-vertical-active {
-  display: block;
+.thumb-vertical {
+  border-radius: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 @media screen and (max-width: 1024px) {
@@ -117,10 +116,6 @@
     font-size: 18px;
     line-height: 22px;
   }
-
-  /* .player__list-scroll {
-    height: 98px;
-  } */
 }
 
 @media screen and (max-width: 768px) {
@@ -128,10 +123,6 @@
     margin: 28px 0;
     height: 78px;
   }
-
-  /* .player__list-scroll {
-    height: 78px;
-  } */
 }
 
 @media screen and (max-width: 640px) {

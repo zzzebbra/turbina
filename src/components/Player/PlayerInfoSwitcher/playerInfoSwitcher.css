@@ -105,6 +105,12 @@
 }
 
 @media screen and (max-width: 480px) {
+  .player__info-button-wrapper {
+    margin: 0;
+    grid-area: selector;
+    width: 100%;
+  }
+
   .player__info-button {
     width: 100%;
     max-width: 240px;

@@ -8,12 +8,12 @@ const PlayerInfo = props => {
   const trackListLength = props.data.length;
 
   return (
-    <article className="player__info">
+    <article className='player__info'>
       <Scrollbars
-        renderTrackVertical={() => <div className="track-vertical"/>}
-        renderThumbVertical={()=> <div className="thumb-vertical thumb-vertical-active"/>}>
+        renderTrackVertical={() => <div className={classNames ('track-vertical', {'track-vertical_hidden': trackListLength < 3})}/>}
+        renderThumbVertical={()=> <div className='thumb-vertical'/>}>
           <ul className="player__list"> 
-            <p className="player__list-title">{
+            <p className="player__list-title player__list-title_static">{
               props.titleMode === 'releases' && trackListLength === 1 ?
               defaultTexts.playerListTitle.singleReleaseMode : (
                 props.titleMode === 'releases' ?
