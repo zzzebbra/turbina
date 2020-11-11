@@ -40,7 +40,7 @@ const PlayerWindow = props => {
   return (
     <div className="player__play-window">
       <div className="player__trackbar">
-        <p className="player__track-name">{currentTrack.length !== 0 ? currentTrack.name : ''}</p>
+        <p className="player__track-name">{currentTrack.length !== 0 ? currentTrack.artist + ' - ' + currentTrack.trackName : ''}</p>
         <p className="player__track-duration" ref={timer}></p>
         <div className="player__scroll" ref={scrollBar} onClick={trackTimeChange}>
           <div className="player__scroll-duration" ref={scroll}></div>

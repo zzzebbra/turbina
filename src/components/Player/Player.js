@@ -16,10 +16,13 @@ const Player = () => {
   React.useEffect(() => {
     const trackList = audioData.map((i) => ({
       id: i.id,
-      name: i.name,
+      artist: i.artist,
+      secondArtist: i.secondArtist,
+      trackName: i.trackName,
       src: i.src,
-      text: `${i.text}`,
-      videoLink: i.link,
+      cover: i.cover,
+      video: i.video,
+      text: i.text,
     }))
     setTracks(trackList);
     setCurrentTrack(trackList[0]);
@@ -56,8 +59,8 @@ const Player = () => {
         'player__wrapper_hidden' : !visibility,
         'player__wrapper_visible' : visibility,
       })}>
-        <a className={classNames ('player__video-link', {'player__video-link_visible' : !!currentTrack.videoLink})}
-        href={currentTrack.videoLink} target='_blank' />
+        <img  className={classNames ('player__cover', {'player__cover_hidden': !visibility && document.documentElement.clientWidth > 768})}
+        src={currentTrack.cover} alt='album-cover'/>
         <button className={classNames ('player__play-button', {
           'player__play-button_play' : !play,
           'player__play-button_pause': play,

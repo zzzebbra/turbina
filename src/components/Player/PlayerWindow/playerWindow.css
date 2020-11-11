@@ -6,6 +6,7 @@
   align-items: center;
   color: #FFFFFF;
   overflow-x: hidden;
+  grid-area: playerwindow;
 }
 
 .player__trackbar {
@@ -103,17 +104,11 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  .player__track-name {
-    font-size: 14px;
-    line-height: 19px;
-  }
+@media screen and (max-width: 768px) {
 
-  .player__track-duration {
-    font-size: 14px;
-    line-height: 19px;
-  }
+}
 
+@media screen and (max-width: 640px) {
   .player__info-switcher {
     width: 122px;
     height: 31px;
@@ -122,14 +117,19 @@
     line-height: 15px;
   }
 
+  .player__track-name {
+    font-size: 14px;
+    line-height: 19px;
+  } 
+
+  .player__track-duration {
+    font-size: 14px;
+    line-height: 19px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .player__play-window {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
     height: 100%;
     flex-direction: column;
   }

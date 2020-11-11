@@ -24,7 +24,7 @@ const PlayerInfo = props => {
               props.data.map((item) => (
               <li key={item.id} id={item.id} src={item.src} className={classNames ('player__list-item', {'player__list-item_active' : props.titleMode === 'releases'})}
                 onClick={props.selector}>
-                {item.name}
+                {item.artist + ' - '+ item.trackName}
               </li>
               ))}
               {

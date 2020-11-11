@@ -23,8 +23,12 @@ button {
 .player__wrapper {
   width: 100%;
   display: grid;
-  grid-template-columns: auto 61px auto 69px;
+  grid-template-columns: min-content 61px auto 69px;
   grid-template-rows: 42px auto;
+  grid-template-areas: 
+    'albumcover playbutton playerwindow switcher'
+    'albumcover . list .'
+  ;
   justify-items: center;
   align-items: center;
 }
@@ -39,20 +43,24 @@ button {
   transition: transform 1s ease;
 }
 
-.player__video-link {
-  margin: 0;
+.player__cover {
+  margin-left: 25px;
   padding: 0;
+  border: 1px solid black;
   width: 176px;
   height: 176px;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  background-color: tomato;
-  /* display: none; */
+  object-fit: cover;
+  grid-area: albumcover;
+  align-self: flex-start;
+}
+
+.player__cover_hidden {
+  display: none;
 }
 
 .player__play-button {
+  grid-column-start: 2;
+  grid-column-end: 3;
   border: 0;
   outline: 0;
   width: 18px;
@@ -61,6 +69,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  grid-area: playbutton;
 }
 
 .player__play-button_pause {
@@ -80,6 +89,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  grid-area: switcher;
 }
 
 .player__hide-switcher_open {
@@ -94,11 +104,36 @@ button {
   .player__wrapper_hidden {
     transform: translateY(134px);
   }
+
+  .player__cover {
+    width: 164px;
+    height: 164px;
+  }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
+  .player__wrapper {
+    grid-template-columns: 61px 142px auto 69px;
+    grid-template-rows: 42px auto;
+    grid-template-areas: 
+    'playbutton playerwindow playerwindow switcher'
+    '. albumcover list .'
+  ;
+  }
+
+  .player__cover {
+    margin-left: 0;
+    width: 112px;
+    height: 112px;
+    justify-self: start;
+    align-self: center;
+  }
+} 
+
+@media screen and (max-width: 640px) {
   .player__wrapper {
     grid-template-rows: 32px auto;
+  ;
   }
 
   .player__wrapper_hidden {
@@ -107,6 +142,11 @@ button {
 }
 
 @media screen and (max-width: 480px) {
+  .player__cover {
+    width: 240px;
+    height: 240px;
+  }
+
   .player__play-button {
     width: 16px;
     height: 13px;
@@ -121,7 +161,13 @@ button {
     width: 100%;
     display: grid;
     grid-template-columns: 40px auto 40px;
-    grid-template-rows: 32px 51px auto;
+    grid-template-rows: 32px 282px 51px auto;
+    grid-template-areas: 
+    'playbutton playerwindow playerwindow switcher'
+    '. albumcover .'
+    '. selector .'
+    '. list .'
+  ;
     justify-items: center;
     align-items: center;
   }
