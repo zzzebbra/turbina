@@ -20,6 +20,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: url('../../../images/player/movie-button-big.svg');
 }
 
 .player__video-button_hidden {
@@ -73,13 +74,7 @@
     border-radius: 16px;
     font-size: 15px;
     line-height: 18px;
-  }
-
-  .player__video-button {
-    font-size: 15px;
-    line-height: 18px;
-  }
-  
+  }  
 }
 
 @media screen and (max-width: 768px)  {
@@ -111,13 +106,14 @@
   .player__info-button {
     width: 100%;
     max-width: 240px;
-    margin: 0;
+    margin-left: 5px;
     font-size: 12px;
     line-height: 15px;
   }
 
   .player__video-button {
     min-width: 74px;
-    margin-right: 5px;
+    background-image: url('../../../images/player/movie-button-small.svg');
   }
+
 }

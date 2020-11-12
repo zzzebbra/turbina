@@ -12,6 +12,8 @@ const Player = () => {
   const [tracks, setTracks] = React.useState([]);
   const [currentTrack, setCurrentTrack] = React.useState([]);
   const [titleMode, setTitleMode] = React.useState('releases');
+  // const [windowWidth, setWindowWidth] = React.useState(document.documentElement.clientWidth);
+
 
   React.useEffect(() => {
     // for checking workability with 2 tracks comment the script below
