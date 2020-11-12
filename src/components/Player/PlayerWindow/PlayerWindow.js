@@ -40,18 +40,23 @@ const PlayerWindow = props => {
     <div className="player__play-window">
       <div className="player__trackbar">
         {currentTrack.length !== 0 ? (
-          <p className="player__track-name">{currentTrack.trackName + ' - ' + currentTrack.artist}{currentTrack.secondArtist ?
-          <span className='player__track-name player__feat'> feat </span> : ''}{currentTrack.secondArtist? currentTrack.secondArtist  : ''}</p>)
+          <p className="player__track-name" >{currentTrack.trackName + ' - ' + currentTrack.artist}{currentTrack.secondArtist ?
+          <span className='player__track-name player__feat' > feat </span> : ''}{currentTrack.secondArtist? currentTrack.secondArtist  : ''}</p>)
           : <p className="player__track-name">
             {defaultTexts.playerPlaceHolder.noTracks}
           </p>
         }
-        <p className="player__track-duration" ref={timer}></p>
+        <p className="player__track-duration" ref={timer} ></p>
         <div className="player__scroll" ref={scrollBar} onClick={trackTimeChange}>
-          <div className="player__scroll-duration" ref={scroll}></div>
+          <div className="player__scroll-duration" ref={scroll} ></div>
         </div>
       </div>
-      <audio ref={player} src={currentTrack.src} type="audio/mp3" onTimeUpdate={setTime} onLoadedData={setTime} />
+      <audio ref={player}
+      src={currentTrack.src}
+      type="audio/mp3"
+      onTimeUpdate={setTime}
+      onLoadedData={setTime}
+      onEnded={props.selector} />
       {/* <button
         className= {classNames('player__info-switcher', {'player__info-switcher_hidden' : !props.visibility})}
         onClick={props.setTitle}> {props.titleMode === 'releases' ?

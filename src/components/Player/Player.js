@@ -8,14 +8,13 @@ import emptyCover from '../../images/player/rectangle.jpg'
 import './player.css';
 
 const Player = () => {
+  const [firstRun, setFirstRun] = React.useState(0)
   const [visibility, setVisibility] = React.useState(true);
   const [play, setPlay] = React.useState(false);
   const [tracks, setTracks] = React.useState([]);
   const [currentTrack, setCurrentTrack] = React.useState([]);
   const [titleMode, setTitleMode] = React.useState('releases');
   const [windowWidth, setWindowWidth] = React.useState(document.documentElement.clientWidth);
-
-
 
   React.useEffect(() => {
     const changeWindowWidth = () => {
@@ -28,7 +27,6 @@ const Player = () => {
       window.removeEventListener('resize', changeWindowWidth);
     }
   })
-
 
   React.useEffect(() => {
     // for checking workability with 2 tracks comment the script below
@@ -63,12 +61,31 @@ const Player = () => {
   }
 
   const trackSelector = (e) => {
-    playToggler();
+    setPlay(false);
     const selectedTrack = tracks.find((i) => {
       return (i.id === e.target.id);
     });
     setCurrentTrack(selectedTrack);
   }
+
+  const trackChange = (e) => {
+    setPlay(false);
+    const selectedTrack = tracks.indexOf(currentTrack);
+    const nextTrack = tracks[selectedTrack + 1]
+    if (!!nextTrack) {
+      setFirstRun(1);
+      setCurrentTrack(nextTrack);
+    }
+  }
+
+  React.useEffect (() => {
+    if (firstRun === 0) return;
+    const playTrack = () => {
+      setPlay(true);
+    }
+    setFirstRun(1);
+    playTrack()
+  }, [currentTrack, firstRun])
 
   const switchMode = () => {
     setTitleMode(titleMode === 'releases' ? 'texts' : 'releases')
@@ -93,7 +110,8 @@ const Player = () => {
           playStatus={play}
           titleMode={titleMode}
           setTitle={switchMode}
-          windowWidth={windowWidth} />
+          windowWidth={windowWidth}
+          selector={trackChange} />
         <button className= {classNames ('player__hide-switcher', {
           'player__hide-switcher_open' : !visibility,
           'player__hide-switcher_close' : visibility,
