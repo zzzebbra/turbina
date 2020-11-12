@@ -11,6 +11,9 @@ const defaultTexts = {
   playerVideoButton: {
     videoMode: 'Клип',
   },
+  playerPlaceHolder: {
+    noTracks: 'Пока что у нас нет релизов',
+  },
 }
 
 export default defaultTexts;

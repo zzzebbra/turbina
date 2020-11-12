@@ -1,7 +1,7 @@
 import React from 'react';
 // import classNames from 'classnames';
 import PlayerInfoSwitcher from '../PlayerInfoSwitcher/PlayerInfoSwitcher';
-// import defaultTexts from '../../../data/defaultTexts';
+import defaultTexts from '../../../data/defaultTexts';
 import './playerWindow.css';
 
 const PlayerWindow = props => {
@@ -39,7 +39,13 @@ const PlayerWindow = props => {
   return (
     <div className="player__play-window">
       <div className="player__trackbar">
-        <p className="player__track-name">{currentTrack.length !== 0 ? currentTrack.artist + ' - ' + currentTrack.trackName : ''}</p>
+        {currentTrack.length !== 0 ? (
+          <p className="player__track-name">{currentTrack.trackName + ' - ' + currentTrack.artist}{currentTrack.secondArtist ? 
+          <span className='player__track-name player__feat'> feat </span> : ''}{currentTrack.secondArtist? currentTrack.secondArtist  : ''}</p>)
+          : <p className="player__track-name">
+            {defaultTexts.playerPlaceHolder.noTracks}
+          </p>
+        }
         <p className="player__track-duration" ref={timer}></p>
         <div className="player__scroll" ref={scrollBar} onClick={trackTimeChange}>
           <div className="player__scroll-duration" ref={scroll}></div>
