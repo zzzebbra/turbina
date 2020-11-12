@@ -13,7 +13,21 @@ const Player = () => {
   const [tracks, setTracks] = React.useState([]);
   const [currentTrack, setCurrentTrack] = React.useState([]);
   const [titleMode, setTitleMode] = React.useState('releases');
-  // const [windowWidth, setWindowWidth] = React.useState(document.documentElement.clientWidth);
+  const [windowWidth, setWindowWidth] = React.useState(document.documentElement.clientWidth);
+
+
+
+  React.useEffect(() => {
+    const changeWindowWidth = () => {
+      setWindowWidth(document.documentElement.clientWidth);
+    }
+
+    window.addEventListener('resize', changeWindowWidth);
+
+    return () => {
+      window.removeEventListener('resize', changeWindowWidth);
+    }
+  })
 
 
   React.useEffect(() => {
@@ -74,13 +88,18 @@ const Player = () => {
           'player__play-button_pause': play,
         })}
           onClick={currentTrack.length !== 0 ? playToggler : undefined} />
-        <PlayerWindow visibility={visibility} currentTrack={currentTrack} playStatus={play} titleMode={titleMode} setTitle={switchMode} />
+        <PlayerWindow visibility={visibility}
+          currentTrack={currentTrack}
+          playStatus={play}
+          titleMode={titleMode}
+          setTitle={switchMode}
+          windowWidth={windowWidth} />
         <button className= {classNames ('player__hide-switcher', {
           'player__hide-switcher_open' : !visibility,
           'player__hide-switcher_close' : visibility,
         })}
           onClick={showToggler} />
-        {document.documentElement.clientWidth <= 480 && 
+        {windowWidth <= 480 &&
           <PlayerInfoSwitcher currentTrack={currentTrack} visibility={visibility} titleMode={titleMode} setTitle={switchMode} />
         }
         <PlayerInfo data={tracks} selector={trackSelector} titleMode={titleMode} currentTrack={currentTrack} />

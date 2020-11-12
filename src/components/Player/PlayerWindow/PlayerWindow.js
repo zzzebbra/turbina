@@ -40,7 +40,7 @@ const PlayerWindow = props => {
     <div className="player__play-window">
       <div className="player__trackbar">
         {currentTrack.length !== 0 ? (
-          <p className="player__track-name">{currentTrack.trackName + ' - ' + currentTrack.artist}{currentTrack.secondArtist ? 
+          <p className="player__track-name">{currentTrack.trackName + ' - ' + currentTrack.artist}{currentTrack.secondArtist ?
           <span className='player__track-name player__feat'> feat </span> : ''}{currentTrack.secondArtist? currentTrack.secondArtist  : ''}</p>)
           : <p className="player__track-name">
             {defaultTexts.playerPlaceHolder.noTracks}
@@ -52,14 +52,14 @@ const PlayerWindow = props => {
         </div>
       </div>
       <audio ref={player} src={currentTrack.src} type="audio/mp3" onTimeUpdate={setTime} onLoadedData={setTime} />
-      {/* <button 
-        className= {classNames('player__info-switcher', {'player__info-switcher_hidden' : !props.visibility})} 
+      {/* <button
+        className= {classNames('player__info-switcher', {'player__info-switcher_hidden' : !props.visibility})}
         onClick={props.setTitle}> {props.titleMode === 'releases' ?
         defaultTexts.playerInfoButton.releaseMode :
         defaultTexts.playerInfoButton.textMode}
       </button> */}
       {/* change visibility appearance */}
-      {document.documentElement.clientWidth > 480 && 
+      {props.windowWidth > 480 &&
         <PlayerInfoSwitcher currentTrack={currentTrack} visibility={props.visibility} titleMode={props.titleMode} setTitle={props.setTitle} />
       }
     </div>
