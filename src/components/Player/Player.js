@@ -4,6 +4,7 @@ import PlayerWindow from './PlayerWindow/PlayerWindow';
 import PlayerInfoSwitcher from './PlayerInfoSwitcher/PlayerInfoSwitcher';
 import PlayerInfo from './PlayerInfo/PlayerInfo';
 import audioData from '../../data/audioData';
+import emptyCover from '../../images/player/rectangle.jpg'
 import './player.css';
 
 const Player = () => {
@@ -20,6 +21,8 @@ const Player = () => {
     const trackList = audioData.map((i) => ({
     // for checking workability with 2 tracks uncomment the script below
     // const trackList = audioData.slice(0, 2).map((i) => ({
+    // for checking workability with 1 track uncomment the script below
+    // const trackList = audioData.slice(0, 1).map((i) => ({
       id: i.id,
       artist: i.artist,
       secondArtist: i.secondArtist,
@@ -65,7 +68,7 @@ const Player = () => {
         'player__wrapper_visible' : visibility,
       })}>
         <img  className={classNames ('player__cover', {'player__cover_hidden': !visibility})}
-        src={currentTrack.cover} alt='album-cover'/>
+        src={currentTrack.cover !== undefined ? currentTrack.cover : emptyCover} alt='album-cover'/>
         <button className={classNames ('player__play-button', {
           'player__play-button_play' : !play,
           'player__play-button_pause': play,
@@ -80,7 +83,7 @@ const Player = () => {
         {document.documentElement.clientWidth <= 480 && 
           <PlayerInfoSwitcher currentTrack={currentTrack} visibility={visibility} titleMode={titleMode} setTitle={switchMode} />
         }
-        <PlayerInfo data={tracks} selector={trackSelector} titleMode={titleMode} track={currentTrack} />
+        <PlayerInfo data={tracks} selector={trackSelector} titleMode={titleMode} currentTrack={currentTrack} />
       </div>
     </section>
   )

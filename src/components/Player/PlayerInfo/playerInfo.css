@@ -56,6 +56,15 @@
   display: block;
 }
 
+.player__list-item_selected {
+  font-style: italic;
+}
+
+.player__feat {
+  display: inline;
+  font-style: italic;
+}
+
 .player__list-scroll {
   width: 3px;
   /* height: 104px; */

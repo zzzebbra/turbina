@@ -21,15 +21,19 @@ const PlayerInfo = props => {
               )
               }</p>
               {
-              props.data.map((item) => (
-              <li key={item.id} id={item.id} src={item.src} className={classNames ('player__list-item', {'player__list-item_active' : props.titleMode === 'releases'})}
+              props.data.map((item) => (                
+              <li key={item.id} id={item.id} src={item.src} className={classNames ('player__list-item', {
+                'player__list-item_active' : props.titleMode === 'releases',
+                'player__list-item_selected' : props.currentTrack.id === item.id,
+                })}
                 onClick={props.selector}>
-                {item.artist + ' - '+ item.trackName}
+                {item.trackName + ' - ' + item.artist}{item.secondArtist ? 
+                <span className='player__list-item player__feat'> feat </span> : ''}{item.secondArtist ? item.secondArtist  : ''}
               </li>
               ))}
               {
-              <li key={props.track.id} className={classNames ('player__list-item', 'player__list-text', {'player__list-item_active' : props.titleMode === 'texts'})}>
-                {props.track.text}
+              <li key={props.currentTrack.id} className={classNames ('player__list-item', 'player__list-text', {'player__list-item_active' : props.titleMode === 'texts'})}>
+                {props.currentTrack.text}
               </li>
             }
           </ul>

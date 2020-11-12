@@ -46,15 +46,15 @@ button {
 .player__cover {
   margin-left: 25px;
   padding: 0;
-  border: 1px solid black;
   width: 176px;
   height: 176px;
+  border-radius: 4px;
   object-fit: cover;
   grid-area: albumcover;
   align-self: flex-start;
 }
 
-.player__cover_hidden {
+.player__cover_hidden { 
   display: none;
 }
 
