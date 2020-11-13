@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import {praktikumLink, marshakLink} from '../../data/footerConfig'
+import { praktikumLink, marshakLink } from "../../data/footerConfig";
 
 function Footer() {
   return (
@@ -15,6 +15,7 @@ function Footer() {
       <span className="footer__creator">
         Сделано студентами
         <a
+          rel="noreferrer"
           target="_blank"
           href={praktikumLink}
           className="footer__link footer__link_spec"

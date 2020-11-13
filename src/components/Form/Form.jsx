@@ -1,67 +1,90 @@
 import React from "react";
 import cx from "classnames";
 import "./index.css";
+import {
+  inputsErorMes,
+  inputEmailRegex,
+  inputNameRegex,
+  inputTelRegex,
+} from "./constants";
 
 function Form() {
-  // input Name
-  const inputNameRegex = /^[а-яА-ЯёЁ\s]+$/;
-  const [inputName, setInputName] = React.useState("");
-  const [isInputNameValid, setIsInputNameValid] = React.useState(true);
-  const [inputNameError, setinputNameError] = React.useState(
-    "введите имя и фамилию автора"
-  );
-  const inpuNametValidation = () => {
-    setIsInputNameValid(inputNameRegex.test(inputName));
-    isInputNameValid
-      ? setinputNameError("введите имя и фамилию автора")
-      : setinputNameError(
-          "ошибка, имя введено не верно. Используйте только Кириллицу"
-        );
-  };
+  const [inputValues, updateInputValues] = React.useState({
+    name: "",
+    tel: "",
+    email: "",
+    text: "",
+    checkbox: false,
+  });
 
-  // input Telephone
-  // const inputTelRegexFinal = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/g;
-  const inputTelRegex = /^\+?[0-9\s]*$/;
-  const [inputTel, setInputTel] = React.useState("");
-  const [isInputTelValid, setIsInputTelValid] = React.useState(true);
-  const [inputTelError, setinputTelError] = React.useState(
-    "введите номер в формате: +7 909 967 38 82"
-  );
-  const inpuTeltValidation = () => {
-    setIsInputTelValid(inputTelRegex.test(inputTel));
-    isInputTelValid
-      ? setinputTelError("введите номер в формате: +7 909 967 38 82")
-      : setinputTelError(
-          "ошибка, номер должен быть в формате: +7 909 967 38 82"
-        );
-  };
-
-  // input Email
-  const inputEmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const [inputEmail, setInputEmail] = React.useState("");
-  const [isInputEmailValid, setIsInputEmailValid] = React.useState(true);
-  const [inputEmailError, setinputEmailError] = React.useState("введите email");
-  const inpuEmailtValidation = () => {
-    setIsInputEmailValid(inputEmailRegex.test(inputEmail));
-    isInputEmailValid
-      ? setinputEmailError("введите email")
-      : setinputEmailError("ошибка, email введен не верно");
-  };
-
-  // input Text
-  const [inputText, setInputText] = React.useState("");
   const [inputTextStart, setInputTextStart] = React.useState(false);
-  const [isInputTextValid, setIsInputTextValid] = React.useState(true);
-  const [inputTextError, setinputTextError] = React.useState("введите стихи");
-  const inpuTexttValidation = () => {
-    if (inputText) setInputTextStart(true);
-    inputTextStart && !inputText
-      ? setinputTextError("ошибка, поле не должно быть пустым. Введите стихи")
-      : setinputTextError("введите стихи");
+  const [lastChangedInputName, setLastChangedInputName] = React.useState(null);
+
+  const [inputValidationValues, updateInputValidationValues] = React.useState({
+    name: true,
+    tel: true,
+    email: true,
+    text: true,
+  });
+  const checkValidInput = (inputValidationName) => {
+    let dataToCheck = {
+      currentRegex: null,
+      inputValue: null,
+    };
+    switch (inputValidationName) {
+      case "name":
+        dataToCheck = {
+          currentRegex: inputNameRegex,
+          inputValue: inputValues.name,
+        };
+        break;
+      case "tel":
+        dataToCheck = {
+          currentRegex: inputTelRegex,
+          inputValue: inputValues.tel,
+        };
+        break;
+      case "email":
+        dataToCheck = {
+          currentRegex: inputEmailRegex,
+          inputValue: inputValues.email,
+        };
+        break;
+      case "text":
+        dataToCheck = {
+          currentRegex: null,
+          inputValue: inputValues.text,
+        };
+        break;
+    }
+    const { currentRegex, inputValue } = dataToCheck;
+    if (inputValidationName === "text") {
+      setInputTextStart(true);
+      const isInputValid = inputValue.length > 0;
+      updateInputValidationValues({
+        ...inputValidationValues,
+        [inputValidationName]: isInputValid,
+      });
+      return;
+    }
+    if (currentRegex === null) return;
+    const isInputValid = currentRegex.test(inputValue);
+    updateInputValidationValues({
+      ...inputValidationValues,
+      [inputValidationName]: isInputValid,
+    });
+    setLastChangedInputName(null);
   };
 
-  //input checkbox policy
-  const [inputCheckbox, setInputCheckbox] = React.useState(false);
+  const updateValue = (e) => {
+    const inputName = e.target.getAttribute("name");
+    if (inputName === "checkbox") {
+      updateInputValues({ ...inputValues, [inputName]: e.target.checked });
+      return;
+    }
+    updateInputValues({ ...inputValues, [inputName]: e.target.value });
+    setLastChangedInputName(inputName);
+  };
 
   // state of button submit form
   const [isButtonActive, setIsButtonActive] = React.useState(false);
@@ -69,35 +92,22 @@ function Form() {
   // button Submit active
   const isFormFilled = () => {
     const isFormValid = [
-      inputName,
-      isInputNameValid,
-      inputTel,
-      isInputTelValid,
-      inputEmail,
-      isInputEmailValid,
-      inputText,
-      inputCheckbox,
+      inputValues.name,
+      inputValidationValues.name,
+      inputValues.tel,
+      inputValidationValues.tel,
+      inputValues.email,
+      inputValidationValues.email,
+      inputValues.text,
+      inputValues.checkbox,
     ].every((elem) => elem !== false);
     setIsButtonActive(isFormValid);
   };
 
   React.useEffect(() => {
-    inpuNametValidation();
-    inpuTeltValidation();
-    inpuEmailtValidation();
-    inpuTexttValidation();
+    lastChangedInputName && checkValidInput(lastChangedInputName);
     isFormFilled();
-  }, [
-    inputTel,
-    isInputTelValid,
-    inputEmail,
-    isInputEmailValid,
-    inputName,
-    isInputNameValid,
-    inputText,
-    isInputTextValid,
-    inputCheckbox,
-  ]);
+  }, [inputValues]);
 
   return (
     <div className="contact-us">
@@ -107,70 +117,81 @@ function Form() {
       <form action="" className="form">
         <div className="input-wrapper">
           <input
-            required
+            name="name"
+            value={inputValues.name}
+            onChange={(e) => updateValue(e)}
             className={cx("form__input", {
-              form__input_active: inputName,
+              form__input_active: inputValues.name,
             })}
-            onChange={(e) => setInputName(e.target.value)}
             type="text"
             placeholder="Имя и фамилия автора"
+            required
           />
-          {inputName && (
+          {inputValues.name && (
             <span
               className={cx("input-error", {
-                "input-error_true": !isInputNameValid,
+                "input-error_true": !inputValidationValues.name,
               })}
             >
-              {inputNameError}
+              {inputValidationValues.name
+                ? inputsErorMes.name.true
+                : inputsErorMes.name.false}
             </span>
           )}
         </div>
         <div className="input-wrapper">
           <input
-            required
-            val={inputTel}
-            onChange={(e) => setInputTel(e.target.value)}
+            name="tel"
+            value={inputValues.tel}
+            onChange={(e) => updateValue(e)}
             className={cx("form__input", {
-              form__input_active: inputTel,
+              form__input_active: inputValues.tel,
             })}
             type="tel"
             placeholder="Телефон"
+            required
           />
-          {inputTel && (
+          {inputValues.tel && (
             <span
               className={cx("input-error", {
-                "input-error_true": !isInputTelValid,
+                "input-error_true": !inputValidationValues.tel,
               })}
             >
-              {inputTelError}
+              {inputValidationValues.tel
+                ? inputsErorMes.tel.true
+                : inputsErorMes.tel.false}
             </span>
           )}
         </div>
         <div className="input-wrapper">
           <input
-            required
-            val={inputEmail}
-            onChange={(e) => setInputEmail(e.target.value)}
+            name="email"
+            value={inputValues.email}
+            onChange={(e) => updateValue(e)}
             className={cx("form__input", {
-              form__input_active: inputEmail,
+              form__input_active: inputValues.email,
             })}
             type="email"
             placeholder="Почта"
+            required
           />
-          {inputEmail && (
+          {inputValues.email && (
             <span
               className={cx("input-error", {
-                "input-error_true": !isInputEmailValid,
+                "input-error_true": !inputValidationValues.email,
               })}
             >
-              {inputEmailError}
+              {inputValidationValues.email
+                ? inputsErorMes.email.true
+                : inputsErorMes.email.false}
             </span>
           )}
         </div>
         <div className="input-wrapper">
           <textarea
-            val={inputText}
-            onChange={(e) => setInputText(e.target.value)}
+            name="text"
+            value={inputValues.text}
+            onChange={(e) => updateValue(e)}
             required
             rows="1"
             className={cx("form__input", {
@@ -182,18 +203,21 @@ function Form() {
           {inputTextStart && (
             <span
               className={cx("input-error", {
-                "input-error_true": !inputText,
+                "input-error_true": !inputValidationValues.text,
               })}
             >
-              {inputTextError}
+              {inputValidationValues.text
+                ? inputsErorMes.text.true
+                : inputsErorMes.text.false}
             </span>
           )}
         </div>
         <div className="checkbox">
           <div htmlFor="checkbox" className="checkbox__input-wrapper">
             <input
-              val={inputCheckbox}
-              onChange={(e) => setInputCheckbox(e.target.checked)}
+              name="checkbox"
+              value={inputValues.checkbox}
+              onChange={(e) => updateValue(e)}
               required
               id="checkbox"
               className="checkbox__input"
