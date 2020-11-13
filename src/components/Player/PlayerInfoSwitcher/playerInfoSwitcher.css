@@ -35,6 +35,11 @@
   background-image: url('../../../images/player/movie-button-big.svg');
 }
 
+.player__video-button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
 .player__video-link {
   margin: 0;
   padding: 0;
@@ -47,6 +52,7 @@
 }
 
 .player__info-button {
+  padding: 0;
   justify-self: end;
   width: 135px;
   height: 35px;
@@ -65,6 +71,11 @@
 
 .player__info-button_hidden {
   display: none;
+}
+
+.player__info-button:hover {
+  opacity: .6;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1024px) {

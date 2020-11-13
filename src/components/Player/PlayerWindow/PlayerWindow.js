@@ -1,5 +1,4 @@
 import React from 'react';
-// import classNames from 'classnames';
 import PlayerInfoSwitcher from '../PlayerInfoSwitcher/PlayerInfoSwitcher';
 import defaultTexts from '../../../data/defaultTexts';
 import './playerWindow.css';
@@ -57,13 +56,6 @@ const PlayerWindow = props => {
       onTimeUpdate={setTime}
       onLoadedData={setTime}
       onEnded={props.selector} />
-      {/* <button
-        className= {classNames('player__info-switcher', {'player__info-switcher_hidden' : !props.visibility})}
-        onClick={props.setTitle}> {props.titleMode === 'releases' ?
-        defaultTexts.playerInfoButton.releaseMode :
-        defaultTexts.playerInfoButton.textMode}
-      </button> */}
-      {/* change visibility appearance */}
       {props.windowWidth > 480 &&
         <PlayerInfoSwitcher currentTrack={currentTrack} visibility={props.visibility} titleMode={props.titleMode} setTitle={props.setTitle} />
       }

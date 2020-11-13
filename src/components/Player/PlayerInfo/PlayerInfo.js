@@ -8,7 +8,7 @@ const PlayerInfo = props => {
   const trackListLength = props.data.length;
 
   return (
-    <article className='player__info'>
+    <article className={classNames('player__info', {'player__info_fixed': props.data.length === 2})}>
       <Scrollbars
         renderTrackVertical={() => <div className={classNames ('track-vertical', {'track-vertical_hidden': trackListLength < 3})}/>}
         renderThumbVertical={()=> <div className='thumb-vertical'/>}>
