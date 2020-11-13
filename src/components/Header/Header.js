@@ -10,21 +10,12 @@ const linkMarshak = 'https://marshakbooks.ru/'
 function Header() {
   const [isHidden, setIsHidden] = React.useState(true);
   const [isStreamigsHidden, setIsStreamigsHidden] = React.useState(false);
-  const [isCloseButtonHidden, setCloseButtonHidden] = React.useState(true);
+
   const [windowWidth, setWindowWidth] = React.useState(document.documentElement.clientWidth);
 // стейт фиксирует размер экрана
-
   function handleVisible() {
     setIsHidden(!isHidden)
     setIsStreamigsHidden(!isStreamigsHidden)
-  }
-
-  function handleStreamingsVisible() {
-
-  }
-
-  function handleCloseButtonVisible() {
-    setCloseButtonHidden(!setCloseButtonHidden)
   }
 
   React.useEffect(() => {
@@ -37,7 +28,7 @@ function Header() {
     }
   })
 
-  if(windowWidth<=320){
+  if(windowWidth<=645){
     return (
       <div className='header'>
         <a href={linkMarshak} target='_blank'><img className='headerLogo' src={logoMarshak} alt='Логотип книжного магазина Маршак'/></a>
