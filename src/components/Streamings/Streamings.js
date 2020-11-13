@@ -1,10 +1,24 @@
 import React from "react";
-import "./streamings.css";
+import "../../blocks/header/streamings.css";
 
 function Streamings (props) {
-  return (
-      <li className={ props.hidden ? `headerListItem` : 'headerListItem  headerListItemHidden'}>
+  if(props.hidden){
+    return (
+      <li className='headerListItem1'>
         <button
+        type="button"
+          onClick={props.onClick}
+          className="header__close-button"
+        >
+        </button>
+      </li>
+  );
+  }
+  return (
+      <li className={ props.hidden ? 'headerListItem  headerListItemHidden': `headerListItem` }>
+        <button
+        type="button"
+          onClick={props.onClick}
           className="headerButton"
         >
          {props.title}

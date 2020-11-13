@@ -35,13 +35,13 @@
     line-height: 18px;
   }
 
-  .headerLinksListItem {
-    padding: 14px 0;
+  .headerListItem {
+    padding: 0;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .headerListItem {
+  .headerButton {
     font-size: 12px;
     line-height: 15px;
   }

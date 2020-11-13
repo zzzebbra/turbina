@@ -1,9 +1,9 @@
 import React from "react";
-import "./links.css";
+import "../../blocks/header/links.css";
 
 function Links(props) {
   return (
-      <li className={ props.hidden ? `headerLinksListItem` : 'headerLinksListItem  headerLinksListItemHidden'}>
+      <li className={ props.hidden ? `headerLinksListItem headerLinksListItemHidden` : 'headerLinksListItem '}>
         <a
           href={props.link}
           className="headerLink"
