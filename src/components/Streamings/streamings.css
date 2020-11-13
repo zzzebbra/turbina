@@ -1,5 +1,6 @@
 .headerStreamItem {
-  padding: 8px 0;
+  margin: 15px 15px 0 0;
+  list-style-type: none;
   text-align: right;
 }
 
@@ -40,9 +41,10 @@
   }
 }
 
-@media screen and (max-width: 320px) {
-  .headerListItem {
+@media screen and (max-width: 480px) {
+  .headerStreamItem {
     font-size: 12px;
     line-height: 15px;
+    margin: 13px 13px 0 0;
   }
 }
