@@ -51,6 +51,8 @@
 
 .player__list-item:hover {
   font-style: italic;
+  opacity: .6;
+  cursor: pointer;
 }
 
 .player__list-text {
@@ -63,6 +65,7 @@
 
 .player__list-item_selected {
   font-style: italic;
+  opacity: .6;
 }
 
 .player__feat {
