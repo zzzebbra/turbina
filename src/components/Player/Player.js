@@ -9,7 +9,7 @@ import './player.css';
 
 const Player = () => {
   const [firstRun, setFirstRun] = React.useState(0)
-  const [visibility, setVisibility] = React.useState(true);
+  const [visibility, setVisibility] = React.useState(false);
   const [play, setPlay] = React.useState(false);
   const [tracks, setTracks] = React.useState([]);
   const [currentTrack, setCurrentTrack] = React.useState([]);

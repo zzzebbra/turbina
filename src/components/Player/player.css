@@ -9,7 +9,7 @@
   align-items: center;
   overflow: hidden;
   max-width: 1280px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .player__mobile-blur {
@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: min-content 61px auto 69px;
   grid-template-rows: 42px auto;
-  grid-template-areas: 
+  grid-template-areas:
     'albumcover playbutton playerwindow switcher'
     'albumcover . list .'
   ;
@@ -52,7 +52,7 @@
   align-self: flex-start;
 }
 
-.player__cover_hidden { 
+.player__cover_hidden {
   display: none;
 }
 
@@ -123,7 +123,7 @@
   .player__wrapper {
     grid-template-columns: 61px 142px auto 69px;
     grid-template-rows: 42px auto;
-    grid-template-areas: 
+    grid-template-areas:
     'playbutton playerwindow playerwindow switcher'
     '. albumcover list .'
   ;
@@ -136,7 +136,7 @@
     justify-self: start;
     align-self: center;
   }
-} 
+}
 
 @media screen and (max-width: 640px) {
   .player__wrapper {
@@ -171,7 +171,7 @@
     display: grid;
     grid-template-columns: 40px auto 40px;
     grid-template-rows: 32px 282px 51px auto;
-    grid-template-areas: 
+    grid-template-areas:
     'playbutton playerwindow switcher'
     '. albumcover .'
     '. selector .'
