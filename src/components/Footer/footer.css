@@ -15,8 +15,8 @@
   }
 }
 
-.footerLink {
-  font-family: "Inter", sans-serif;
+.footer__link {
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -27,21 +27,21 @@
   cursor: pointer;
 }
 
-.footerLink:hover {
+.footer__link:hover {
   cursor: pointer;
   opacity: 0.6;
   transition: .5s;
 }
 
 @media screen and (max-width: 600px) {
-  .footerLink {
+  .footer__link {
     font-size: 12px;
     line-height: 22px;
   }
 }
 
-.footerCopyright {
-  font-family: Inter;
+.footer__creator {
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -51,19 +51,19 @@
 }
 
 @media screen and (max-width: 600px) {
-  .footerCopyright {
+  .footer__copyright {
     font-size: 12px;
     line-height: 22px;
   }
 }
 
-.footerLinkSpec {
+.footer__link_spec {
   text-decoration: underline;
   padding: 0 0 0 6px;
 }
 
 @media screen and (max-width: 600px) {
-  .footerLinkMarshak {
+  .footer__link_marshak {
     margin: 0 0 5px;
   }
 }
