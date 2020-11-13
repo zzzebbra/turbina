@@ -4,12 +4,11 @@ import Form from "../Form/Form";
 
 function About() {
   return (
-    <div className="wrapperAbout">
+    <div className="wrapper-about">
       <div className="about">
         <div className="container">
-          <h2 className="containerTitle">О ПРОЕКТЕ.</h2>
-          <div className="conatainerContent">
-            <p className="containerText">
+          <h2 className="container__title">О ПРОЕКТЕ</h2>
+            <p className="container__text">
               Мы знаем, что наши дети постоянно существуют в режиме
               непрекращающегося творческого процесса. Мы видим это, когда
               ребёнок что-то напевает, когда он бесконечно рисует, когда
@@ -19,7 +18,7 @@ function About() {
               просто мы привыкаем к этому. Давайте попробуем внимательнее
               присмотреться к нашим детям.
             </p>
-            <p className="containerText">
+            <p className="container__text">
               Мы запускаем проект «ТУРБИНА», который открывает работу настоящего
               музыкального лейбла на базе «Маршака». В рамках «ТУРБИНЫ» лучшие
               современные инди-музыканты пишут свои песни на стихи, написанные
@@ -33,12 +32,10 @@ function About() {
               культурным достоянием.
             </p>
           </div>
-        </div>
 
         <div className="container">
-          <h2 className="containerTitle">КАК ЭТО РАБОТАЕТ?</h2>
-          <div className="conatainerContent">
-            <p className="containerText">
+          <h2 className="container__title">КАК ЭТО РАБОТАЕТ?</h2>
+            <p className="container__text">
               Вы можете прислать нам тексты, родившиеся у ваших детей, которые
               вы записали и считаете, что это сильное высказывание. Мы собираем
               пул таких текстов и передаём их музыкантам. Артисты создают музыку
@@ -47,37 +44,32 @@ function About() {
               Хадн Дадн feat. Варя Карпова и Федя Быстров — Контур.
             </p>
           </div>
-        </div>
 
         <div className="container">
-          <h2 className="containerTitle">ТЕЗИСЫ.</h2>
-          <div className="conatainerContent">
+          <h2 className="container__title">ТЕЗИСЫ</h2>
             <ul className="theses">
-              <li className="thesesItem">
+              <li className="theses__item">
                 Дети никогда не прекращают творить и круто стараться быть на них
                 похожими в этом.
               </li>
-              <li className="thesesItem">
+              <li className="theses__item">
                 Детское бессознательное помогает родителям понять, что
                 происходит внутри семьи.
               </li>
-              <li className="thesesItem">
+              <li className="theses__item">
                 Не существует детской и взрослой поэзии. Существует мысль и
                 чувство, зафиксированное в ней.
               </li>
-              <li className="thesesItem">
+              <li className="theses__item">
                 Дети получают невероятное удовольствие и мотивацию от того, что
                 их творчество востребовано сверстниками и взрослыми.
               </li>
             </ul>
           </div>
-        </div>
 
         <div className="container">
-          <h2 className="containerTitle">ФОРМА.</h2>
-          <div className="conatainerContent">
+          <h2 className="container__title">ФОРМА</h2>
             <Form />
-          </div>
         </div>
       </div>
     </div>

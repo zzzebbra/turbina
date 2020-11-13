@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import cx from "classnames";
 import "./index.css";
 
@@ -101,112 +100,130 @@ function Form() {
   ]);
 
   return (
-    <div className="contactUs">
-      <span className="contactUsCapture">
+    <div className="contact-us">
+      <span className="contact-us__capture">
         Заполняя эту форму, вы становитесь частью проекта.
       </span>
       <form action="" className="form">
-        <div className="inputWrapper">
+        <div className="input-wrapper">
           <input
             required
-            className={cx("formInput", inputName && "formInputActive")}
+            className={cx("form__input", {
+              form__input_active: inputName,
+            })}
             onChange={(e) => setInputName(e.target.value)}
             type="text"
             placeholder="Имя и фамилия автора"
           />
           {inputName && (
             <span
-              className={cx(
-                "inputError",
-                !isInputNameValid && "inputErrorTrue"
-              )}
+              className={cx("input-error", {
+                "input-error_true": !isInputNameValid,
+              })}
             >
               {inputNameError}
             </span>
           )}
         </div>
-        <div className="inputWrapper">
+        <div className="input-wrapper">
           <input
             required
             val={inputTel}
             onChange={(e) => setInputTel(e.target.value)}
-            className={cx("formInput", inputTel && "formInputActive")}
+            className={cx("form__input", {
+              form__input_active: inputTel,
+            })}
             type="tel"
             placeholder="Телефон"
           />
           {inputTel && (
             <span
-              className={cx("inputError", !isInputTelValid && "inputErrorTrue")}
+              className={cx("input-error", {
+                "input-error_true": !isInputTelValid,
+              })}
             >
               {inputTelError}
             </span>
           )}
         </div>
-        <div className="inputWrapper">
+        <div className="input-wrapper">
           <input
             required
             val={inputEmail}
             onChange={(e) => setInputEmail(e.target.value)}
-            className={cx("formInput", inputEmail && "formInputActive")}
+            className={cx("form__input", {
+              form__input_active: inputEmail,
+            })}
             type="email"
             placeholder="Почта"
           />
           {inputEmail && (
             <span
-              className={cx(
-                "inputError",
-                !isInputEmailValid && "inputErrorTrue"
-              )}
+              className={cx("input-error", {
+                "input-error_true": !isInputEmailValid,
+              })}
             >
               {inputEmailError}
             </span>
           )}
         </div>
-        <div className="inputWrapper">
+        <div className="input-wrapper">
           <textarea
             val={inputText}
             onChange={(e) => setInputText(e.target.value)}
             required
             rows="1"
-            className={cx("formInput", inputTextStart && "formInputActive")}
+            className={cx("form__input", {
+              form__input_active: inputTextStart,
+            })}
             type="text"
             placeholder="Стихи"
           />
           {inputTextStart && (
-            <span className={cx("inputError", !inputText && "inputErrorTrue")}>
+            <span
+              className={cx("input-error", {
+                "input-error_true": !inputText,
+              })}
+            >
               {inputTextError}
             </span>
           )}
         </div>
         <div className="checkbox">
-          <div htmlFor="checkbox" className="checkboxInputWrapper">
+          <div htmlFor="checkbox" className="checkbox__input-wrapper">
             <input
               val={inputCheckbox}
               onChange={(e) => setInputCheckbox(e.target.checked)}
               required
               id="checkbox"
-              className="checkboxInput"
+              className="checkbox__input"
               type="checkbox"
             />
-            <label htmlFor="checkbox" className="checkboxInputFake"></label>
+            <label htmlFor="checkbox" className="checkbox__input-fake"></label>
           </div>
-          <label className="checkboxLabel" htmlFor="checkbox">
-            <span className="checkboxLabelText">Согласен с</span>
-            <Link to="#" className="checkboxLink">
+          <label className="checkbox__label" htmlFor="checkbox">
+            <span className="checkbox__label-text">Согласен с</span>
+            <a href="#" className="checkbox__link">
+              <div className="checkbox__link-popup">
+                Пользовательское соглашение
+              </div>
               офертой
-            </Link>
+            </a>
           </label>
         </div>
         {isButtonActive ? (
-          <button type="submit" className="formButton">
+          <button type="submit" className="form-button">
             Отправить форму
           </button>
         ) : (
           <button
             disabled
             type="submit"
-            className="formButton formButtonDisabled"
+            className="form-button form-button_disabled"
           >
+            <div className="form-button-popup">
+              Еще нельзя. Все поля, должны быть заполнены корректыми данными
+            </div>
             Отправить форму
           </button>
         )}
