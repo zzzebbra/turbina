@@ -1,16 +1,20 @@
-.headerLinksList {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.headerListItem {
+  padding: 8px 0;
+  text-align: right;
 }
 
-.headerLink {
+.headerListItemHidden {
+  display: none;
+}
+
+.headerButton {
   text-decoration: none;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
+  background: none;
   color: #FFFFFF;
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
@@ -19,23 +23,14 @@
   transition: .5s;
 }
 
-.headerLinksListItem {
-  padding: 16px 0;
-  text-align: right;
-}
-
-.headerLinksListItemHidden {
-  display: none;
-}
-
-.headerLink:hover {
+.headerButton:hover {
   cursor: pointer;
   opacity: 0.6;
   transition: .5s;
 }
 
 @media screen and (max-width: 1024px) {
-  .headerLink {
+  .headerButton {
     font-size: 15px;
     line-height: 18px;
   }
@@ -46,7 +41,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .headerLink {
+  .headerListItem {
     font-size: 12px;
     line-height: 15px;
   }

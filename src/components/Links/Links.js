@@ -1,42 +1,17 @@
 import React from "react";
 import "./links.css";
 
-function Links() {
+function Links(props) {
   return (
-    <ul className="headerLinksList">
-      <li className="headerLinksListItem">
+      <li className={ props.hidden ? `headerLinksListItem` : 'headerLinksListItem  headerLinksListItemHidden'}>
         <a
-          href="https://music.yandex.ru/home"
+          href={props.link}
           className="headerLink"
-          target="blanc"
+          target="_blank"
         >
-          Яндекс.Музыка ↗
+         {props.title}
         </a>
       </li>
-      <li className="headerLinksListItem">
-        <a
-          href="https://www.spotify.com/ru-ru/"
-          className="headerLink"
-          target="blanc"
-        >
-          Spotify ↗
-        </a>
-      </li>
-      <li className="headerLinksListItem">
-        <a
-          href="https://music.apple.com/ru/browse"
-          className="headerLink"
-          target="blanc"
-        >
-          Apple Music ↗
-        </a>
-      </li>
-      <li className="headerLinksListItem">
-        <a href="https://vk.com/vkmusic" className="headerLink" target="blanc">
-          VK Music ↗
-        </a>
-      </li>
-    </ul>
   );
 }
 

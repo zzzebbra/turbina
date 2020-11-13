@@ -8,10 +8,8 @@ import "./main.css";
 function Main() {
   return (
     <section className="main">
-      {/* <div className="wrapper"> */}
         <Header />
         <Logo />
-      {/* </div> */}
       <Player />
       <About />
       <Footer />

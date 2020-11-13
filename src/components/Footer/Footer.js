@@ -7,14 +7,14 @@ function Footer() {
       <a
         className="footerLink footerLinkMarshak"
         href="https://marshakbooks.ru/"
-        target="blanc"
+        target="_blank"
       >
         &#169; Маршак, 2020.
       </a>
       <span className="footerCopyright">
         Сделано студентами
         <a
-          target="blanc"
+          target="_blank"
           href="https://praktikum.yandex.ru"
           className="footerLink footerLinkSpec"
         >
