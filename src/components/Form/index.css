@@ -1,5 +1,5 @@
-.contactUsCapture {
-  font-family: Inter;
+.contact-us__capture {
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -10,37 +10,37 @@
 }
 
 @media screen and (max-width: 1025px) {
-  .contactUsCapture {
+  .contact-us__capture {
     font-size: 15px;
     line-height: 22px;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .contactUsCapture {
+  .contact-us__capture {
     font-size: 12px;
     line-height: 16px;
     margin: 0 0 40px;
   }
 }
 
-.inputWrapper {
+.input-wrapper {
   box-sizing: border-box;
   margin: 0 0 10px;
   max-width: max-content;
 }
 
 @media screen and (max-width: 650px) {
-  .inputWrapper {
+  .input-wrapper {
     min-width: 100%;
   }
 }
 
-.inputWrapper:last-of-type {
+.input-wrapper:last-of-type {
   margin: 0;
 }
 
-.inputError {
+.input-error {
   padding: 4px 0 0;
   display: block;
   font-size: 16px;
@@ -48,14 +48,14 @@
   color: #000000a2;
 }
 
-.inputErrorTrue {
+.input-error_true {
   font-size: 16px;
   line-height: 20px;
   color: #ff0000;
 }
 
-.formInput {
-  font-family: Inter;
+.form__input {
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   background: transparent;
@@ -71,13 +71,13 @@
 }
 
 @media screen and (max-width: 769px) {
-  .formInput {
+  .form__input {
     width: 648px;
   }
 }
 
 @media screen and (max-width: 750px) {
-  .formInput {
+  .form__input {
     width: 0;
     max-width: 648px;
     box-sizing: border-box;
@@ -85,13 +85,13 @@
 }
 
 @media screen and (max-width: 650px) {
-  .formInput {
+  .form__input {
     min-width: 100%;
   }
 }
 
-.formInput::placeholder {
-  font-family: Inter;
+.form__input::placeholder {
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -100,12 +100,12 @@
 }
 
 @media screen and (max-width: 430px) {
-  .formInput {
+  .form__input {
     font-size: 14px;
   }
 }
 
-.formInputActive {
+.form__input_active {
   margin: 0;
 }
 
@@ -115,7 +115,7 @@
   align-items: center;
 }
 
-.checkboxInputWrapper {
+.checkbox__input-wrapper {
   display: inline-block;
   margin: 0 20px 0 0;
   position: relative;
@@ -123,16 +123,16 @@
   height: 28px;
 }
 
-.checkboxInput {
+.checkbox__input {
   opacity: 0;
   margin: 0;
   z-index: 2;
 }
-.checkboxLabel {
+.checkbox__label {
   cursor: pointer;
 }
 
-.checkboxInputFake {
+.checkbox__input-fake {
   position: absolute;
   top: 0;
   left: 0;
@@ -144,35 +144,34 @@
   cursor: pointer;
 }
 
-.checkboxInput:checked + .checkboxInputFake {
+.checkbox__input:checked + .checkbox__input-fake {
   background-color: black;
 }
 
-.checkboxInput:focus + .checkboxInputFake {
+.checkbox__input:focus + .checkbox__input-fake {
   outline: 5px auto #1362e1;
 }
 
-.checkboxLabelText {
+.checkbox__label-text {
   display: inline-block;
   margin: 0 6px 0 0;
 }
 
-.checkboxLink {
+.checkbox__link {
   position: relative;
   color: inherit;
 }
 
-.checkboxLink::after {
+.checkbox__link-popup {
   cursor: default;
   position: absolute;
-  top: -46px;
+  top: -60px;
   left: 50%;
   transform: translate(-50%, 0);
-  content: "Пользовательское соглашение";
   width: 260px;
   padding: 10px;
   text-align: center;
-  max-height: 30px;
+  max-height: 40px;
   letter-spacing: 0.75px;
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -184,7 +183,7 @@
 }
 
 @media screen and (max-width: 430px) {
-  .checkboxLink::after {
+  .checkbox__link-popup {
     position: absolute;
     top: 0;
     left: -10000000%;
@@ -193,19 +192,19 @@
   }
 }
 
-.checkboxLink:hover::after {
+.checkbox__link:hover .checkbox__link-popup {
   visibility: visible;
   opacity: 1;
 }
 
 @media screen and (max-width: 430px) {
-  .checkboxLink:hover::after {
+  .checkbox__link:hover .checkbox__link-popup {
     opacity: 0;
     visibility: hidden;
   }
 }
 
-.formButton {
+.form-button {
   box-sizing: border-box;
   cursor: pointer;
   background-color: transparent;
@@ -213,7 +212,7 @@
   border: 2px solid #000;
   border-radius: 30px;
   min-width: 600px;
-  font-family: Inter;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -225,57 +224,56 @@
 }
 
 @media screen and (max-width: 769px) {
-  .formButton {
+  .form-button {
     box-sizing: border-box;
     width: 648px;
   }
 }
 
 @media screen and (max-width: 750px) {
-  .formButton {
+  .form-button {
     width: 0;
     max-width: 600px;
   }
 }
 
 @media screen and (max-width: 750px) {
-  .formButton {
+  .form-button {
     width: 0;
     max-width: 600px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  .formButton {
+  .form-button {
     min-width: 100%;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .formButton {
+  .form-button {
     padding: 10px 20px;
   }
 }
 
-.formButton:hover {
+.form-button:hover {
   font-style: italic;
 }
 
-.formButtonDisabled {
+.form-button_disabled {
   position: relative;
 }
 
-.formButtonDisabled:hover {
+.form-button_disabled:hover {
   font-style: normal;
 }
 
-.formButtonDisabled::after {
+.form-button-popup {
   cursor: default;
   position: absolute;
   bottom: -68px;
   left: 50%;
   transform: translate(-50%, 0);
-  content: "Еще нельзя. Все поля, должны быть заполнены корректыми данными";
   width: 300px;
   padding: 10px;
   min-height: 30px;
@@ -290,7 +288,7 @@
 }
 
 @media screen and (max-width: 430px) {
-  .formButtonDisabled::after {
+  .form-button-popup {
     position: absolute;
     top: 0;
     left: -10000000%;
@@ -299,8 +297,13 @@
   }
 }
 
+.form-button_disabled:hover .form-button-popup {
+  opacity: 1;
+  visibility: visible;
+}
+
 @media screen and (max-width: 430px) {
-  .formButtonDisabled:hover::after {
+  .form-button_disabled:hover .form-button-popup {
     opacity: 0;
     visibility: hidden;
   }

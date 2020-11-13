@@ -1,4 +1,4 @@
-.wrapperAbout {
+.wrapper-about {
   min-width: 100%;
   display: flex;
   justify-content: center;
@@ -62,9 +62,9 @@
   }
 }
 
-.containerTitle {
+.container__title {
   margin: 0 0 40px;
-  font-family: Inter;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 50px;
@@ -72,33 +72,30 @@
 }
 
 @media screen and (max-width: 1025px) {
-  .containerTitle {
+  .container__title {
     font-size: 46px;
     line-height: 56px;
   }
 }
 
 @media screen and (max-width: 769px) {
-  .containerTitle {
+  .container__title {
     font-size: 42px;
     line-height: 51px;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .containerTitle {
+  .container__title {
     font-size: 32px;
     line-height: 39px;
     margin: 0 0 30px;
   }
 }
 
-.conatainerContent {
-}
-
-.containerText {
+.container__text {
   margin: 0 0 24px;
-  font-family: Inter;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -107,20 +104,20 @@
 }
 
 @media screen and (max-width: 1025px) {
-  .containerText {
+  .container__text {
     font-size: 15px;
     line-height: 22px;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .containerText {
+  .container__text {
     font-size: 12px;
     line-height: 16px;
   }
 }
 
-.containerText:last-of-type {
+.container__text:last-of-type {
   margin: 0;
 }
 
@@ -141,9 +138,9 @@
   }
 }
 
-.thesesItem {
+.theses__item {
   margin: 0 0 14px;
-  font-family: Inter;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -152,19 +149,19 @@
 }
 
 @media screen and (max-width: 1025px) {
-  .thesesItem {
+  .theses__item {
     font-size: 15px;
     line-height: 22px;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .thesesItem {
+  .theses__item {
     font-size: 12px;
     line-height: 16px;
   }
 }
 
-.thesesItem:last-of-type {
+.theses__item:last-of-type {
   margin: 0;
 }
