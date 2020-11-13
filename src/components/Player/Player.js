@@ -30,11 +30,11 @@ const Player = () => {
 
   React.useEffect(() => {
     // for checking workability with 2 tracks comment the script below
-    // const trackList = audioData.map((i) => ({
+    const trackList = audioData.map((i) => ({
     // for checking workability with 2 tracks uncomment the script below
     // const trackList = audioData.slice(0, 2).map((i) => ({
     // for checking workability with 1 track uncomment the script below
-    const trackList = audioData.slice(0, 1).map((i) => ({
+    // const trackList = audioData.slice(0, 1).map((i) => ({
       id: i.id,
       artist: i.artist,
       secondArtist: i.secondArtist,
