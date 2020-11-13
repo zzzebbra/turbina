@@ -47,6 +47,7 @@
 }
 
 .player__info-button {
+  padding: 0;
   justify-self: end;
   width: 135px;
   height: 35px;
@@ -74,7 +75,7 @@
     border-radius: 16px;
     font-size: 15px;
     line-height: 18px;
-  }  
+  }
 }
 
 @media screen and (max-width: 768px)  {

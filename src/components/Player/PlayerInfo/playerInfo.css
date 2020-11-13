@@ -12,6 +12,11 @@
   grid-area: list;
 }
 
+.player__info_fixed {
+  height: 120px;
+  margin: 30px 0 0;
+}
+
 .player__list {
   margin: 0;
   padding: 0;
@@ -67,7 +72,6 @@
 
 .player__list-scroll {
   width: 3px;
-  /* height: 104px; */
   height: 100%;
   border-radius: 1.5px;
   background-color: rgba(255, 255, 255, 0.3);
@@ -80,15 +84,6 @@
 }
 
 /* Custom scrollbars styles */
-/* .track-horizontal {
-  background-color: transparent;
-  z-index: -1;
-}
-
-.thumb-horizontal {
-  background-color: transparent;
-} */
-
 .track-vertical {
  position: absolute;
  top: 0;
@@ -114,6 +109,10 @@
     height: 98px;
   }
 
+  .player__info_fixed {
+    height: 110px;
+  }
+
   .player__list-title {
     margin: 0 0 15px;
     font-size: 18px;
@@ -137,6 +136,11 @@
 @media screen and (max-width: 640px) {
   .player__info {
     height: 80px;
+  }
+
+  .player__info_fixed {
+    height: 100px;
+
   }
 
   .player__list-title {

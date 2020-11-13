@@ -8,11 +8,11 @@ const PlayerInfo = props => {
   const trackListLength = props.data.length;
 
   return (
-    <article className='player__info'>
+    <article className={classNames('player__info', {'player__info_fixed': props.data.length === 2})}>
       <Scrollbars
         renderTrackVertical={() => <div className={classNames ('track-vertical', {'track-vertical_hidden': trackListLength < 3})}/>}
         renderThumbVertical={()=> <div className='thumb-vertical'/>}>
-          <ul className="player__list"> 
+          <ul className="player__list">
             <p className="player__list-title player__list-title_static">{
               props.titleMode === 'releases' && trackListLength === 1 ?
               defaultTexts.playerListTitle.singleReleaseMode : (
@@ -21,13 +21,13 @@ const PlayerInfo = props => {
               )
               }</p>
               {
-              props.data.map((item) => (                
+              props.data.map((item) => (
               <li key={item.id} id={item.id} src={item.src} className={classNames ('player__list-item', {
                 'player__list-item_active' : props.titleMode === 'releases',
                 'player__list-item_selected' : props.currentTrack.id === item.id,
                 })}
                 onClick={props.selector}>
-                {item.trackName + ' - ' + item.artist}{item.secondArtist ? 
+                {item.trackName + ' - ' + item.artist}{item.secondArtist ?
                 <span className='player__list-item player__feat'> feat </span> : ''}{item.secondArtist ? item.secondArtist  : ''}
               </li>
               ))}
