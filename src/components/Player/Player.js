@@ -93,7 +93,7 @@ const Player = () => {
 
 
   return (
-    <section className="player">
+    <section className={classNames("player", {"player__mobile-blur": windowWidth <= 480 && !!visibility})}>
       <div className={classNames ('player__wrapper', {
         'player__wrapper_hidden' : !visibility,
         'player__wrapper_visible' : visibility,

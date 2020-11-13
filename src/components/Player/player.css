@@ -1,11 +1,3 @@
-li {
-  cursor: pointer;
-
-}
-button {
-  cursor: pointer;
-}
-
 .player {
   margin: 0;
   padding: 0;
@@ -18,6 +10,12 @@ button {
   overflow: hidden;
   max-width: 1280px;
   margin: 0 auto; 
+}
+
+.player__mobile-blur {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
 }
 
 .player__wrapper {
@@ -80,6 +78,11 @@ button {
   background-image: url('../../images/player/play-button.svg');
 }
 
+.player__play-button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
 .player__hide-switcher {
   width: 24px;
   height: 24px;
@@ -98,6 +101,11 @@ button {
 
 .player__hide-switcher_close {
   background-image: url('../../images/player/close-button.svg');
+}
+
+.player__hide-switcher:hover {
+  opacity: .6;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1024px) {
