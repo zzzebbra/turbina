@@ -1,0 +1,13 @@
+.header__close-button {
+  background: url(../../../images/close-icon-header.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 30px;
+  width: 29px;
+  height: 29px;
+  float: right;
+  margin-bottom: 16px;
+}

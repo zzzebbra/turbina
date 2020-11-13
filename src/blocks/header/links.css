@@ -24,6 +24,10 @@
   text-align: right;
 }
 
+.headerLinksListItemHidden {
+  display: none;
+}
+
 .headerLink:hover {
   cursor: pointer;
   opacity: 0.6;
