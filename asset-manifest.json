@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/turbina/static/css/main.c0cb26b1.chunk.css",
-    "main.js": "/turbina/static/js/main.3ccc9d4f.chunk.js",
-    "main.js.map": "/turbina/static/js/main.3ccc9d4f.chunk.js.map",
+    "main.js": "/turbina/static/js/main.de4af7a4.chunk.js",
+    "main.js.map": "/turbina/static/js/main.de4af7a4.chunk.js.map",
     "runtime-main.js": "/turbina/static/js/runtime-main.51217ece.js",
     "runtime-main.js.map": "/turbina/static/js/runtime-main.51217ece.js.map",
     "static/js/2.d555320f.chunk.js": "/turbina/static/js/2.d555320f.chunk.js",
@@ -29,6 +29,6 @@
     "static/js/runtime-main.51217ece.js",
     "static/js/2.d555320f.chunk.js",
     "static/css/main.c0cb26b1.chunk.css",
-    "static/js/main.3ccc9d4f.chunk.js"
+    "static/js/main.de4af7a4.chunk.js"
   ]
 }
