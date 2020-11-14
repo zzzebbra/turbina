@@ -7,14 +7,14 @@ import Streamings from '../Streamings/Streamings'
 
 const linkMarshak = 'https://marshakbooks.ru/'
 
-function Header() {
-  const [isHidden, setIsHidden] = React.useState(true);
+function Header(props) {
+  // const [isHidden, setIsHidden] = React.useState(true);
   const [isStreamigsHidden, setIsStreamigsHidden] = React.useState(false);
 
   const [windowWidth, setWindowWidth] = React.useState(document.documentElement.clientWidth);
-// стейт фиксирует размер экрана
+
   function handleVisible() {
-    setIsHidden(!isHidden)
+    props.handleVisible()
     setIsStreamigsHidden(!isStreamigsHidden)
   }
 
@@ -39,19 +39,19 @@ function Header() {
           onClick={handleVisible}
           title = 'Стриминги'/>
           <Links
-          hidden = {isHidden}
+          hidden = {isStreamigsHidden}
           link = 'https://music.yandex.ru/home'
           title = 'Яндекс.Музыка ↗'/>
           <Links
-          hidden = {isHidden}
+          hidden = {isStreamigsHidden}
           link = 'https://www.spotify.com/ru-ru/'
           title = 'Spotify ↗'/>
           <Links
-          hidden = {isHidden}
+          hidden = {isStreamigsHidden}
           link = 'https://music.apple.com/ru/browse'
           title = 'Apple Music ↗'/>
           <Links
-          hidden = {isHidden}
+          hidden = {isStreamigsHidden}
           link = 'https://vk.com/vkmusic'
           title = 'VK Music ↗'/>
         </ul>

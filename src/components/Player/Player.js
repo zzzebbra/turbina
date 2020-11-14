@@ -7,7 +7,7 @@ import audioData from '../../data/audioData';
 import emptyCover from '../../images/player/rectangle.jpg'
 import './player.css';
 
-const Player = () => {
+const Player = (props) => {
   const [firstRun, setFirstRun] = React.useState(0)
   const [visibility, setVisibility] = React.useState(true);
   const [play, setPlay] = React.useState(false);
@@ -93,7 +93,11 @@ const Player = () => {
 
 
   return (
-    <section className={classNames("player", {"player__mobile-blur": windowWidth <= 480 && !!visibility})}>
+    <section className={classNames("player", {
+      "player_stretched": !props.isHidden,
+      "player__mobile-blur": windowWidth <= 480 && !!visibility,
+      "player__mobile-blur_stretched": windowWidth <= 480 && !!visibility && !props.isHidden,
+      })}>
       <div className={classNames ('player__wrapper', {
         'player__wrapper_hidden' : !visibility,
         'player__wrapper_visible' : visibility,
