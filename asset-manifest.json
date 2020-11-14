@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/turbina/static/css/main.c0cb26b1.chunk.css",
-    "main.js": "/turbina/static/js/main.de4af7a4.chunk.js",
-    "main.js.map": "/turbina/static/js/main.de4af7a4.chunk.js.map",
+    "main.css": "/turbina/static/css/main.e8dc8c49.chunk.css",
+    "main.js": "/turbina/static/js/main.e35d6fb5.chunk.js",
+    "main.js.map": "/turbina/static/js/main.e35d6fb5.chunk.js.map",
     "runtime-main.js": "/turbina/static/js/runtime-main.51217ece.js",
     "runtime-main.js.map": "/turbina/static/js/runtime-main.51217ece.js.map",
     "static/js/2.d555320f.chunk.js": "/turbina/static/js/2.d555320f.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.f1c9e5f8.chunk.js": "/turbina/static/js/3.f1c9e5f8.chunk.js",
     "static/js/3.f1c9e5f8.chunk.js.map": "/turbina/static/js/3.f1c9e5f8.chunk.js.map",
     "index.html": "/turbina/index.html",
-    "static/css/main.c0cb26b1.chunk.css.map": "/turbina/static/css/main.c0cb26b1.chunk.css.map",
+    "static/css/main.e8dc8c49.chunk.css.map": "/turbina/static/css/main.e8dc8c49.chunk.css.map",
     "static/js/2.d555320f.chunk.js.LICENSE.txt": "/turbina/static/js/2.d555320f.chunk.js.LICENSE.txt",
     "static/media/Bob Marley.4fa559e3.jpg": "/turbina/static/media/Bob Marley.4fa559e3.jpg",
     "static/media/Bop - Fragile Moments.d1a10b6e.mp3": "/turbina/static/media/Bop - Fragile Moments.d1a10b6e.mp3",
@@ -18,17 +18,17 @@
     "static/media/Ixnay_On_The_Hombre.ad29c440.jpg": "/turbina/static/media/Ixnay_On_The_Hombre.ad29c440.jpg",
     "static/media/Offspring — I Choose.09aa8551.mp3": "/turbina/static/media/Offspring — I Choose.09aa8551.mp3",
     "static/media/bob_marley_and_robin_schulz-sun_is_shining.35fca159.mp3": "/turbina/static/media/bob_marley_and_robin_schulz-sun_is_shining.35fca159.mp3",
-    "static/media/player.css": "/turbina/static/media/play-button.8a504c35.svg",
-    "static/media/header__close-button.css": "/turbina/static/media/close-icon-header.7da3355c.svg",
-    "static/media/logo-marshak.2155b0aa.svg": "/turbina/static/media/logo-marshak.2155b0aa.svg",
-    "static/media/logo-turbina.10fd6bb4.svg": "/turbina/static/media/logo-turbina.10fd6bb4.svg",
-    "static/media/playerInfoSwitcher.css": "/turbina/static/media/movie-button-small.3ba33ced.svg",
-    "static/media/main.css": "/turbina/static/media/testBackground.47b4c727.svg"
+    "static/media/player.css": "/turbina/static/media/play-button.8f69e510.svg",
+    "static/media/header__close-button.css": "/turbina/static/media/close-icon-header.4072a3aa.svg",
+    "static/media/logo-marshak.9422abe3.svg": "/turbina/static/media/logo-marshak.9422abe3.svg",
+    "static/media/logo-turbina.050855bb.svg": "/turbina/static/media/logo-turbina.050855bb.svg",
+    "static/media/playerInfoSwitcher.css": "/turbina/static/media/movie-button-small.5571c537.svg",
+    "static/media/main.css": "/turbina/static/media/testBackground.821efd19.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.51217ece.js",
     "static/js/2.d555320f.chunk.js",
-    "static/css/main.c0cb26b1.chunk.css",
-    "static/js/main.de4af7a4.chunk.js"
+    "static/css/main.e8dc8c49.chunk.css",
+    "static/js/main.e35d6fb5.chunk.js"
   ]
 }
