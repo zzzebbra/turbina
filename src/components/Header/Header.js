@@ -39,18 +39,22 @@ function Header(props) {
           onClick={handleVisible}
           title = 'Стриминги'/>
           <Links
+          windowWidth={windowWidth}
           hidden = {isStreamigsHidden}
           link = 'https://music.yandex.ru/home'
           title = 'Яндекс.Музыка ↗'/>
           <Links
+          windowWidth={windowWidth}
           hidden = {isStreamigsHidden}
           link = 'https://www.spotify.com/ru-ru/'
           title = 'Spotify ↗'/>
           <Links
+          windowWidth={windowWidth}
           hidden = {isStreamigsHidden}
           link = 'https://music.apple.com/ru/browse'
           title = 'Apple Music ↗'/>
           <Links
+          windowWidth={windowWidth}
           hidden = {isStreamigsHidden}
           link = 'https://vk.com/vkmusic'
           title = 'VK Music ↗'/>
