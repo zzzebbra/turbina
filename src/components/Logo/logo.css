@@ -42,10 +42,16 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .mainLogo {
     max-width: 270px;
-    min-height: 80px;
+    height: 636px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .mainLogo {
+    height: 645px;
   }
 
   .mainLogoImage {
