@@ -150,6 +150,12 @@
 }
 
 @media screen and (max-width: 480px) {
+  .player {
+    position: absolute;
+    top:195px;
+    left: 0;
+  }
+
   .player__cover {
     width: 240px;
     height: 240px;
