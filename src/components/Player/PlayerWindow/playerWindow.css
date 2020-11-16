@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #FFFFFF;
+  color: #ffffff;
   overflow-x: hidden;
   grid-area: playerwindow;
 }
@@ -21,7 +21,7 @@
 
 .player__track-name {
   margin: 0;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -39,7 +39,7 @@
 
 .player__track-duration {
   margin: 0 0 0 10px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -64,7 +64,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 1024px) {
@@ -73,14 +73,13 @@
     line-height: 22px;
   }
 
-  .player__track-duration{
+  .player__track-duration {
     font-size: 18px;
     line-height: 22px;
   }
 }
 
 @media screen and (max-width: 768px) {
-
 }
 
 @media screen and (max-width: 640px) {
