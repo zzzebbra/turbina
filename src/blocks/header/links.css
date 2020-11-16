@@ -6,17 +6,17 @@
 
 .headerLink {
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
-  border: 2px solid #FFFFFF;
+  color: #ffffff;
+  border: 2px solid #ffffff;
   box-sizing: border-box;
   border-radius: 30px;
   padding: 8px;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .headerLinksListItem {
@@ -31,7 +31,7 @@
 .headerLink:hover {
   cursor: pointer;
   opacity: 0.6;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 @media screen and (max-width: 1024px) {
